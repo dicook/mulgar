@@ -1,15 +1,34 @@
 Package: mulgar
-Title: Functions associated with the book 
+Title: Functions for multivaariaate dat visualisation 
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Dianne",
+           family = "Cook",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
+           email = "dicook@monash.edu",
+           comment = c(ORCID = "0000-0002-3813-7155")),
+    person(given = "Stuart", 
+           family = "Lee", 
+           email = "stuart.lee1@monash.edu", 
+           role = "ctb", 
+           comment = c(ORCID = "0000-0003-1179-8436")),
+    person(given = "Ursula", 
+           family = "Laa", 
+           email = "ursula.laa@boku.ac.at", 
+           role = "ctb", 
+           comment = c(ORCID = "0000-0002-0249-6439")), 
+    person(given = "Earo",
+           family = "Wang",
+           role = c("ctb"),
+           email = "earo.wang@gmail.com",
+           comment = c(ORCID = "0000-0001-6448-5260"))
 Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to
-    pick a license
+Depends:
+    R (>= 4.0)
+Imports:
+    geozoo,
+    tourr
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
