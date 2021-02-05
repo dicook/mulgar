@@ -1,7 +1,7 @@
 Package: mulgar
 Title: Functions for multivaariaate dat visualisation 
 Version: 0.0.0.9000
-Authors@R: 
+Authors@R: c(
     person(given = "Dianne",
            family = "Cook",
            role = c("aut", "cre"),
@@ -21,8 +21,8 @@ Authors@R:
            family = "Wang",
            role = c("ctb"),
            email = "earo.wang@gmail.com",
-           comment = c(ORCID = "0000-0001-6448-5260"))
-Description: What the package does (one paragraph).
+           comment = c(ORCID = "0000-0001-6448-5260")))
+Description: This package is a companion to the book Interactive and dynamic graphics for multivariate data in R by Cook, Laa, Lee and Wang.
 Depends:
     R (>= 4.0)
 Imports:
