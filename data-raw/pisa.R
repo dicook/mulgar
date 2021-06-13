@@ -11,4 +11,4 @@ pisa <- stu_qqq %>%
 
 # Keep country, and scores
 save(pisa,
-		 file=here::here("data", "PISA_scores_2018.rda"))
+		 file=here::here("data", "pisa.rda"))

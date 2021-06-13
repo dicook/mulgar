@@ -11,7 +11,8 @@
 #' PV1MATH-PV10SCIE simulated scores
 #' }
 #'
-#' @name pisa
+#' @name PISA test scores
+#' @aliases pisa
 #' @docType data
 #' @format A
 #' @keywords datasets
