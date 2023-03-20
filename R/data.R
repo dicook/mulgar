@@ -26,17 +26,21 @@ NULL
 #' AFLW player statistics
 #'
 #' This is data from the 2021 Women's Australian Football League.
-#' These are player statistics for the matches that they
-#' participated in, as provided by the [fitzRoy]() package. Note
-#' that the id for a player is unique, but their names might differ
-#' across matches due to marriage, or slight errors in spelling ornicknames.
+#' These are average player statistics across the season, with game statistics
+#' provided by the [fitzRoy](https://jimmyday12.github.io/fitzRoy/) package.
+#' If you are new to the game of AFL, there is a nice
+#' explanation on [Wikipedia](https://en.wikipedia.org/wiki/Women%27s_Australian_rules_football).
+#' The primary analysis is to summarise the variation using
+#' principal component analysis, which gives information about
+#' relationships between the statistics or skills sets common in
+#' players. One also might be tempted to cluster the players, but
+#' there are no obvious clusters so it could be frustrating. At
+#' best one could partition the players into groups, while recognising
+#' there are no absolutely distinct and separated groups.
 #'
 #' \itemize{
 #' id, given_name, surname, number, position, team: player identification details
 #' time_pct, ..., clearances: player statistics for the match
-#' round, date, day, hour: timing of match
-#' venue, home_team, away_team: location of match
-#' provider: identifier for record provider
 #' }
 #'
 #' @name aflw player statistics
