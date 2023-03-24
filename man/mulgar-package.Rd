@@ -4,18 +4,25 @@
 \name{mulgar-package}
 \alias{mulgar}
 \alias{mulgar-package}
-\title{mulgar: Functions for multivaariaate dat visualisation}
+\title{mulgar: Functions for multivariate data visualisation}
 \description{
-This package is a companion to the book Interactive and dynamic graphics for multivariate data in R by Cook, Laa, Lee and Wang.
+This is a companion to the book [Interactive and dynamic graphics for high-dimensional data using R](https://dicook.github.io/mulgar_book/) by Cook and Laa. It contains useful functions for processing data in preparation for visualising with a tour. There are also several sample data sets.
+}
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://dicook.github.io/mulgar/}
+  \item \url{https://github.com/dicook/mulgar}
+  \item Report bugs at \url{https://github.com/dicook/mulgar/issues}
+}
+
 }
 \author{
 \strong{Maintainer}: Dianne Cook \email{dicook@monash.edu} (\href{https://orcid.org/0000-0002-3813-7155}{ORCID})
 
 Other contributors:
 \itemize{
-  \item Stuart Lee \email{stuart.lee1@monash.edu} (\href{https://orcid.org/0000-0003-1179-8436}{ORCID}) [contributor]
   \item Ursula Laa \email{ursula.laa@boku.ac.at} (\href{https://orcid.org/0000-0002-0249-6439}{ORCID}) [contributor]
-  \item Earo Wang \email{earo.wang@gmail.com} (\href{https://orcid.org/0000-0001-6448-5260}{ORCID}) [contributor]
 }
 
 }
