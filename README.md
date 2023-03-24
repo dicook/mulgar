@@ -16,5 +16,5 @@ library(mulgar)
 
 ## About the name
 
-An iconic landscale in Australia is the [mulga](https://en.wikipedia.org/wiki/Mulga_(habitat)). A lot of it was cleared in the 1800s to make way for vast wheat fields. 
+The [mulga](https://en.wikipedia.org/wiki/Mulga_(habitat)) is an iconic landscape in Australia. It is a woodland dominated by the mulga tree and other species of Acacias. The climate is semi-arid and it can be found across Australia, Queensland, New South Wales, South Australia and Western Australia. This landscape is host to numerous species: red kangaroos, spinifex hopping mice, mulga parrots, dunnarts, thorny devils, and bearded dragons.
 
