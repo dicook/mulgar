@@ -1,5 +1,5 @@
 Package: mulgar
-Title: Functions for multivaariaate dat visualisation 
+Title: Functions for multivariate data visualisation 
 Version: 0.0.0.9000
 Authors@R: c(
     person(given = "Dianne",
@@ -22,7 +22,10 @@ Authors@R: c(
            role = c("ctb"),
            email = "earo.wang@gmail.com",
            comment = c(ORCID = "0000-0001-6448-5260")))
-Description: This package is a companion to the book Interactive and dynamic graphics for multivariate data in R by Cook, Laa, Lee and Wang.
+Description: This is a companion to the book 
+  [Interactive and dynamic graphics for high-dimensional data using R](https://dicook.github.io/mulgar_book/) 
+  by Cook and Laa. It contains useful functions for processing data in preparation for 
+  visualising with a tour. There are also several sample data sets.
 Depends:
     R (>= 4.0)
 Imports:
