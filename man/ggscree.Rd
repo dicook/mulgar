@@ -19,7 +19,10 @@ plots these against the PC number.
 }
 \examples{
 data(aflw)
-pca <- prcomp(aflw[,7:10])
-scree <- ggscree(pca)
-scree
+aflw_std <- apply(aflw[,7:35], 2, function(x)
+                    (x-mean(x, na.rm=TRUE))/
+							       sd(x, na.rm=TRUE))
+aflw_pca <- prcomp(aflw_std[,c("goals","behinds",
+                               "kicks","disposals")])
+ggscree(aflw_pca)
 }

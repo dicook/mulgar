@@ -54,3 +54,25 @@ NULL
 #' data(aflw)
 #' glimpse(aflw)
 NULL
+
+#' 2D plane in 5D
+#'
+#' This data is simulated to use for testing.
+#' It has two dimensions of variability and
+#' two of noise. It is created from a 2 factor
+#' model.
+#'
+#' \itemize{
+#' x1, x2, x3, x4, x5 are four variables
+#' }
+#'
+#' @name plane
+#' @aliases plane
+#' @docType data
+#' @format A
+#' @keywords datasets
+#' @examples
+#' plane_pca <- prcomp(plane)
+#' ggscree(plane_pca)
+NULL
+
