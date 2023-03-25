@@ -59,11 +59,11 @@ NULL
 #'
 #' This data is simulated to use for testing.
 #' It has two dimensions of variability and
-#' two of noise. It is created from a 2 factor
+#' three of noise. It is created from a 2 factor
 #' model.
 #'
 #' \itemize{
-#' x1, x2, x3, x4, x5 are four variables
+#' x1, x2, x3, x4, x5 are five variables
 #' }
 #'
 #' @name plane
@@ -71,8 +71,31 @@ NULL
 #' @docType data
 #' @format A
 #' @keywords datasets
+#' @seealso box
 #' @examples
 #' plane_pca <- prcomp(plane)
 #' ggscree(plane_pca)
+NULL
+
+#' 3D plane in 5D
+#'
+#' This data is simulated to use for testing.
+#' It has three dimensions of variability and
+#' two of noise. It is created from a 3 factor
+#' model.
+#'
+#' \itemize{
+#' x1, x2, x3, x4, x5 are five variables
+#' }
+#'
+#' @name box
+#' @aliases box
+#' @docType data
+#' @format A
+#' @keywords datasets
+#' @seealso plane
+#' @examples
+#' box_pca <- prcomp(box)
+#' ggscree(box_pca)
 NULL
 
