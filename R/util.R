@@ -18,3 +18,26 @@ convert_proj_tibble <- function(t1) {
 		        rep(dim(t1)[[1]], dim(t1)[[3]])))
 	tbl1
 }
+
+#' Scale variable to 0-1
+#'
+#' @noRd
+rescale01 <- function(x) {
+	rng <- range(x, na.rm = TRUE)
+	(x - rng[1]) / (rng[2] - rng[1])
+}
+
+#' Scale all numerical variables to 0-1
+#'
+#' @noRd
+rescaler <- function(df) {
+	is_numeric <- vapply(df, is.numeric, logical(1))
+	df[is_numeric] <- lapply(df[is_numeric], rescale01)
+	df
+}
+
+#' Standardise variable
+#'
+#' @noRd
+scale2 <- function(x, na.rm = FALSE) (x - mean(x, na.rm = na.rm)) / sd(x, na.rm)
+

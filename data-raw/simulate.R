@@ -44,3 +44,34 @@ box_model <- pca_model(box_pca, d=3)
 # Add data, and examine
 d <- rbind(box_model$points, box)
 animate_xy(d, edges=box_model$edges, axes="bottomleft")
+
+# Simulate clustered data, 5D, three clusters
+clusters <- matrix(rnorm(100*3*5), ncol=5)
+#clusters[1:100, 1] <- clusters[1:100, 1] - 3
+clusters[1:100, 2] <- clusters[1:100, 2] - 4
+#clusters[1:100, 3] <- clusters[1:100, 3] - 2
+clusters[1:100, 4] <- clusters[1:100, 4] - 5
+clusters[101:200, 3] <- clusters[101:200, 3] + 2
+clusters[101:200, 4] <- clusters[101:200, 4] - 4
+clusters[201:300, 5] <- clusters[201:300, 5] - 2
+#clusters[201:300, 1] <- clusters[201:300, 1] + 2
+clusters[201:300, 2] <- clusters[201:300, 2] + 5
+#clusters[201:300, 5] <- clusters[201:300, 5] + 2
+clusters <- apply(clusters, 2, function(x) (x-mean(x))/sd(x))
+clusters <- as.data.frame(clusters)
+
+# Check
+library(GGally)
+ggpairs(clusters)
+cl_pca <- prcomp(clusters)
+ggscree(cl_pca)
+ggpairs(data.frame(cl_pca$x))
+animate_xy(clusters, axes="off")
+animate_xy(clusters, guided_tour(holes()), sphere = TRUE)
+cl <- c(rep("A", 100), rep("B", 100), rep("C", 100))
+animate_xy(clusters, guided_tour(holes()), sphere = TRUE, col=cl)
+animate_xy(clusters, guided_tour(lda_pp(cl)), col=cl, sphere = TRUE)
+animate_xy(clusters, guided_tour(lda_pp(cl)), col=cl)
+
+clusters$cl <- cl
+save(clusters, file="data/clusters.rda")

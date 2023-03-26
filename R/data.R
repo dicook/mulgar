@@ -97,3 +97,24 @@ NULL
 #' ggscree(box_pca)
 NULL
 
+#' Three clusters in 5D
+#'
+#' This data is simulated to use for testing.
+#' It has three elliptical clusters in mostly
+#' variables 2 and 4. They are not equidistant.
+#'
+#' \itemize{
+#' x1, x2, x3, x4, x5 are five variables
+#' }
+#'
+#' @name clusters
+#' @aliases clusters
+#' @docType data
+#' @format A
+#' @keywords datasets
+#' @seealso plane
+#' @examples
+#' clusters_pca <- prcomp(clusters)
+#' ggscree(clusters_pca)
+NULL
+

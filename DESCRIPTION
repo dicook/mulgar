@@ -25,6 +25,9 @@ Imports:
     ggplot2,
     dplyr,
     purrr
+Suggests:
+    ggdendro,
+    colorspace
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
