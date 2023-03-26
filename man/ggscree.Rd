@@ -4,10 +4,15 @@
 \alias{ggscree}
 \title{This function produces a simple scree plot}
 \usage{
-ggscree(pc)
+ggscree(pc, conf = TRUE, cumulative = FALSE)
 }
 \arguments{
 \item{pc}{PCA object}
+
+\item{conf}{logical whether to compute and add
+simulation confidence bands}
+
+\item{cumulative}{logical whether to draw cumulative variance}
 }
 \value{
 scree a ggplot object

@@ -22,6 +22,12 @@
     <loc>/reference/box.html</loc>
   </url>
   <url>
+    <loc>/reference/calc_mv_dist.html</loc>
+  </url>
+  <url>
+    <loc>/reference/calc_norm.html</loc>
+  </url>
+  <url>
     <loc>/reference/convert_proj_tibble.html</loc>
   </url>
   <url>
@@ -49,6 +55,12 @@
     <loc>/reference/f_vc_ellipse.html</loc>
   </url>
   <url>
+    <loc>/reference/gen_vc_ellipse.html</loc>
+  </url>
+  <url>
+    <loc>/reference/gen_xvar_ellipse.html</loc>
+  </url>
+  <url>
     <loc>/reference/ggscree.html</loc>
   </url>
   <url>
@@ -58,9 +70,15 @@
     <loc>/reference/mulgar-package.html</loc>
   </url>
   <url>
+    <loc>/reference/norm_vec.html</loc>
+  </url>
+  <url>
     <loc>/reference/pca_model.html</loc>
   </url>
   <url>
     <loc>/reference/plane.html</loc>
+  </url>
+  <url>
+    <loc>/reference/rmvn.html</loc>
   </url>
 </urlset>

@@ -12,3 +12,11 @@ pisa <- stu_qqq %>%
 # Keep country, and scores
 save(pisa,
 		 file=here::here("data", "pisa.rda"))
+
+# Alternative source for the data is from the
+# learningtower package. But only one test score
+# is provided for each student, for each of read, math, science
+library(learningtower)
+all2018 <- load_student("2018")
+aus_2018 <- all2018 %>%
+	filter(country == "AUS")

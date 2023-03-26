@@ -23,7 +23,8 @@ Imports:
     tourr,
     tibble,
     ggplot2,
-    dplyr
+    dplyr,
+    purrr
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

@@ -1,41 +1,11 @@
-#' Generate points on the surface of an ellipse
-#'
-#' This function generates points by transforming points
-#' on the surface of a sphere.
-#'
-#' @param vc symmetric square matrix describing the
-#' variance-covariance matrix which defines the shape
-#' of the ellipse.
-#' @param xm center of the ellipse, a vector of length
-#' equal to the dimension of vc
-#' @param n number of points to generate
-#' @return matrix of size n x p
-#' @export
-#' @examples
-#' require(ggplot2)
-#' require(tibble)
-#' ell2d <- f_vc_ellipse(vc = matrix(c(4, 2, 2, 6), ncol=2, byrow=T), xm = c(1,1))
-#' ell2d <- as_tibble(ell2d)
-#' ggplot(ell2d, aes(x = V1, y = V2)) + geom_point()
-f_vc_ellipse <- function(vc, xm, n = 500) {
-	p <- ncol(vc)
-	x <- sphere.hollow(p, n)$points
-
-	evc <- eigen(vc)
-	vc2 <- (evc$vectors)%*%diag(sqrt(evc$values))%*%t(evc$vectors)
-	x <- x%*%vc2
-
-	x <- x + matrix(rep(xm, each = n), ncol = p)
-}
-
 #' Normalise a vector to have length 1
-f_norm_vec<-function(x) {
-	x <- x/f_norm(x)
+norm_vec<-function(x) {
+	x <- x/calc_norm(x)
 	x
 }
 
 #' Calculate the norm of a vector
-f_norm <- function(x) { sqrt(sum(x^2)) }
+calc_norm <- function(x) { sqrt(sum(x^2)) }
 
 #' Generate a sample from a multivariate normal
 #'
@@ -54,14 +24,16 @@ f_norm <- function(x) { sqrt(sum(x^2)) }
 #' @examples
 #' require(ggplot2)
 #' require(tibble)
-#' d <- f_gen_mvn(n=100, p=2, mn = c(1,1), vc = matrix(c(4, 2, 2, 6), ncol=2, byrow=T))
-#' d <- as_tibble(d)
+#' d <- mulgar::rmvn(n=100, p=2, mn = c(1,1),
+#'                   vc = matrix(c(4, 2, 2, 6),
+#'                          ncol=2, byrow=T))
+#' d <- as_tibble(d, .name_repair="minimal")
 #' ggplot(d, aes(x = V1, y = V2)) + geom_point()
-f_gen_mvn <- function(n=100, p=5, mn=rep(0,p), vc=diag(rep(1,p))) {
+rmvn <- function(n=100, p=5, mn=rep(0,p), vc=diag(rep(1,p))) {
 	x <-  matrix(rnorm(n*p), ncol=p)
 	ev <- eigen(vc)
-	vcsqrt <- diag(sqrt(ev$values))%*%t(ev$vectors)
-	x <- x%*%vcsqrt
+	vcsqrt <- diag(sqrt(ev$values)) %*% t(ev$vectors)
+	x <- x %*% vcsqrt
 	x <- x + matrix(rep(mn,n), ncol=p,  byrow=T)
 	return(x)
 }
@@ -78,19 +50,60 @@ f_gen_mvn <- function(n=100, p=5, mn=rep(0,p), vc=diag(rep(1,p))) {
 #' @return vector of length n
 #' @export
 #' @examples
-#' cat("make an example\n")
-f_mv_dist <- function(x){
+#' require(ggplot2)
+#' require(tibble)
+#' data(aflw)
+#' aflw_std <- apply(aflw[,7:35], 2, function(x)
+#'                     (x-mean(x, na.rm=TRUE))/
+#' 							       sd(x, na.rm=TRUE))
+#' d <- calc_mv_dist(aflw_std[,c("goals","behinds",
+#'                                "kicks","disposals")])
+#' d <- as_tibble(d, .name_repair="minimal")
+#' ggplot(d, aes(x=value)) + geom_histogram()
+calc_mv_dist <- function(x){
 	n <- dim(x)[1]
 	p <- dim(x)[2]
 	mn <- apply(x, 2, mean)
 	vc <- var(x)
 	ev <- eigen(vc)
-	vcinv <- ev$vectors%*%diag(1/ev$values)%*%t(ev$vectors)
+	vcinv <- ev$vectors %*% diag(1/ev$values) %*% t(ev$vectors)
 	x <- x - matrix(rep(mn, n), ncol=p, byrow=T)
 	dx <- NULL
 	for (i in 1:n)
-		dx <- c(dx, x[i,]%*%vcinv%*%as.matrix(x[i,]))
+		dx <- c(dx, x[i,] %*% vcinv %*% as.matrix(x[i,]))
 	return(dx)
+}
+
+#' Generate points on the surface of an ellipse
+#'
+#' This function generates points by transforming points
+#' on the surface of a sphere.
+#'
+#' @param vc symmetric square matrix describing the
+#' variance-covariance matrix which defines the shape
+#' of the ellipse.
+#' @param xm center of the ellipse, a vector of length
+#' equal to the dimension of vc
+#' @param n number of points to generate
+#' @return matrix of size n x p
+#' @export
+#' @examples
+#' require(ggplot2)
+#' require(tibble)
+#' ell2d <- gen_vc_ellipse(vc = matrix(c(4, 2, 2, 6), ncol=2, byrow=T),
+#'                         xm = c(1,1))
+#' ell2d <- as_tibble(ell2d)
+#' ggplot(ell2d, aes(x = V1, y = V2)) + geom_point() +
+#'   theme(aspect.ratio=1)
+gen_vc_ellipse <- function(vc, xm, n = 500) {
+	p <- ncol(vc)
+	x <- geozoo::sphere.hollow(p, n)$points
+
+	evc <- eigen(vc)
+	vc2 <- (evc$vectors) %*% diag(sqrt(evc$values)) %*% t(evc$vectors)
+	x <- x%*%vc2
+
+	x <- x + matrix(rep(xm, each = n), ncol = p)
 }
 
 #' Ellipse matching data center and variance
@@ -107,17 +120,32 @@ f_mv_dist <- function(x){
 #' @return matrix of size n x p
 #' @export
 #' @examples
-#' cat("make an example\n")
-f_var_ellipse <- function(x, n=100){
-	xm <- apply(d, 2, mean)
+#' data(aflw)
+#' aflw_vc <- gen_xvar_ellipse(aflw[,c("goals","behinds",
+#'                                "kicks","disposals")], n=500)
+#' require(ggplot2)
+#' ggplot(aflw_vc, aes(x=goals, y=behinds)) + geom_point() +
+#'   theme(aspect.ratio=1)
+#' if (interactive) {
+#'   require(tourr)
+#'   animate_slice(aflw_vc, rescale=TRUE, v_rel=0.02)
+#'   aflw_all <- rbind(aflw_vc, aflw[,c("goals","behinds",
+#'                                "kicks","disposals")])
+#'   clrs <- c(rep("orange", 500), rep("black", nrow(aflw)))
+#'   animate_xy(aflw_all, col=clrs)
+#' }
+gen_xvar_ellipse <- function(x, n=100){
+	xm <- apply(x, 2, mean)
 	p <- dim(x)[2]
 	xn <- dim(x)[1]
 	xv <- var(x)
 	ev <- eigen(xv)
-	sph <- matrix(rnorm(n*p),ncol=p)
-	cntr <- t(apply(sph,1,f.norm.vec))
-	cntr <- cntr%*%diag(sqrt(ev$values))%*%t(ev$vectors)
+	sph <- matrix(rnorm(n*p), ncol=p)
+	cntr <- t(apply(sph, 1, norm_vec))
+	cntr <- cntr %*% diag(sqrt(ev$values)) %*% t(ev$vectors)
 	cntr <- cntr + matrix(rep(xm,n), nrow=n, byrow=T)
+	colnames(cntr) <- colnames(x)
+	cntr <- as.data.frame(cntr)
 	return(cntr)
 }
 
