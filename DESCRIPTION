@@ -1,5 +1,5 @@
 Package: mulgar
-Title: Functions for multivariate data visualisation 
+Title: Functions for pre-processing data for multivariate data visualisation using tours
 Version: 0.0.0.9000
 Authors@R: c(
     person(given = "Dianne",

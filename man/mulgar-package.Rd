@@ -4,7 +4,7 @@
 \name{mulgar-package}
 \alias{mulgar}
 \alias{mulgar-package}
-\title{mulgar: Functions for multivariate data visualisation}
+\title{mulgar: Functions for pre-processing data for multivariate data visualisation using tours}
 \description{
 This is a companion to the book [Interactive and dynamic graphics for high-dimensional data using R](https://dicook.github.io/mulgar_book/) by Cook and Laa. It contains useful functions for processing data in preparation for visualising with a tour. There are also several sample data sets.
 }
