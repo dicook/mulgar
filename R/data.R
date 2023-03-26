@@ -11,8 +11,7 @@
 #' PV1MATH-PV10SCIE simulated scores
 #' }
 #'
-#' @name PISA test scores
-#' @aliases pisa
+#' @name pisa
 #' @docType data
 #' @format A
 #' @keywords datasets
@@ -43,8 +42,7 @@ NULL
 #' time_pct, ..., clearances: player statistics for the match
 #' }
 #'
-#' @name aflw player statistics
-#' @aliases aflw
+#' @name aflw
 #' @docType data
 #' @format A
 #' @keywords datasets
