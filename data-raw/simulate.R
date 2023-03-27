@@ -75,3 +75,11 @@ animate_xy(clusters, guided_tour(lda_pp(cl)), col=cl)
 
 clusters$cl <- cl
 save(clusters, file="data/clusters.rda")
+
+simple_clusters <- data.frame(X1=c(rnorm(73), rnorm(64, mean=5)),
+															X2=c(rnorm(73), rnorm(64, mean=5)),
+															cl = c(rep("A", 73), rep("B", 64)))
+simple_clusters <- simple_clusters %>%
+	mutate_if(is.numeric, function(x) (x-mean(x))/sd(x))
+ggplot(simple_clusters, aes(x=X1, y=X2)) + geom_point()
+save(simple_clusters, file="simple_clusters.rda")

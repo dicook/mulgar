@@ -22,6 +22,6 @@ clusters_pca <- prcomp(clusters)
 ggscree(clusters_pca)
 }
 \seealso{
-plane
+simple_clusters
 }
 \keyword{datasets}
