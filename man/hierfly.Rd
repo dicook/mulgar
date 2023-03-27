@@ -16,7 +16,7 @@ possibilities}
 details}
 }
 \value{
-list with data and edges
+list with data and edges and segments
 }
 \description{
 Supplements a data set with information needed to draw a

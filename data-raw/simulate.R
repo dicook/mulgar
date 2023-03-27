@@ -59,6 +59,7 @@ clusters[201:300, 2] <- clusters[201:300, 2] + 5
 #clusters[201:300, 5] <- clusters[201:300, 5] + 2
 clusters <- apply(clusters, 2, function(x) (x-mean(x))/sd(x))
 clusters <- as.data.frame(clusters)
+colnames(clusters) <- paste0("x",1:5)
 
 # Check
 library(GGally)
@@ -76,10 +77,15 @@ animate_xy(clusters, guided_tour(lda_pp(cl)), col=cl)
 clusters$cl <- cl
 save(clusters, file="data/clusters.rda")
 
-simple_clusters <- data.frame(X1=c(rnorm(73), rnorm(64, mean=5)),
-															X2=c(rnorm(73), rnorm(64, mean=5)),
-															cl = c(rep("A", 73), rep("B", 64)))
+simple_clusters <- data.frame(x1=c(rnorm(73), rnorm(64, mean=5)),
+															x2=c(rnorm(73), rnorm(64, mean=5)),
+															cl = factor(c(rep("A", 73), rep("B", 64))))
 simple_clusters <- simple_clusters %>%
 	mutate_if(is.numeric, function(x) (x-mean(x))/sd(x))
 ggplot(simple_clusters, aes(x=X1, y=X2)) + geom_point()
 save(simple_clusters, file="simple_clusters.rda")
+
+cl_hw <- hclust(dist(simple_clusters[,1:2]),
+								method="ward.D2")
+cl_hfly <- hierfly(simple_clusters, cl_hw, scale=FALSE)
+debug(hierfly)
