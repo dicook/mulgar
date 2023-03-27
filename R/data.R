@@ -117,14 +117,13 @@ NULL
 #' ggscree(clusters_pca)
 NULL
 
-#' Three clusters in 5D
+#' Two clusters in 2D
 #'
 #' This data is simulated to use for testing.
-#' It has three elliptical clusters in mostly
-#' variables 2 and 4. They are not equidistant.
+#' It has two spherical clusters, and two variables.
 #'
 #' \itemize{
-#' x1, x2, x3, x4, x5 are five variables
+#' x1, x2 are variables
 #' }
 #'
 #' @name simple_clusters
