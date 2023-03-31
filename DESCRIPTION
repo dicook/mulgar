@@ -23,11 +23,13 @@ Imports:
     tourr,
     tibble,
     ggplot2,
+    tidyr,
     dplyr,
     purrr
 Suggests:
     ggdendro,
-    colorspace
+    colorspace,
+    mclust
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
