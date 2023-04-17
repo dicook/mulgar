@@ -53,6 +53,41 @@ NULL
 #' glimpse(aflw)
 NULL
 
+#' Australian bushfires 2019-2020
+#'
+#' This data was collated by Weihao (Patrick) Li as part of his
+#' Honours research at Monash University. It contains fire
+#' ignitions as detected from satellite hotspots, and processed
+#' using the [spotoroo](https://tengmcing.github.io/spotoroo/) package, augmented with
+#' measurements on weather, vegetation, proximity to human activity. The
+#' cause variable is predicted based on historical fire ignition data
+#' collected by County Fire Authority personnel.
+#'
+#' \itemize{
+#' id, lon, lat, time unique ide, and spatiotemporal information for each fire ignition
+#' FOR_CODE, FOR_TYPE, COVER, HEIGHT, FOREST vegetation variables
+#' rf, arf7-arf720 average rainfall, on that day, and over last 7, ..., 720 days
+#' se, ase7-ase720 solar exposure, on that day, and over last 7, ..., 720 days
+#' maxt, amaxt7-amaxt720 max temperature, on that day, and over last 7, ..., 720 days
+#' mint, amint7-amint720 min temperature, on that day, and over last 7, ..., 720 days
+#' ws, aws_m0-aws_m24 average wind speed, on that day, and for last 1-24 months
+#' dist_road, log_dist_road distance to nearest road
+#' dist_cfa, log_dist_cfa distance to neaest county fire authority facility
+#' dist_camp, log_dist_camp distance to nearest camp site
+#' cause predicted ignition cause, accident, arson, burning_off, lightning
+#' }
+#'
+#' @name bushfires
+#' @docType data
+#' @format A
+#' @keywords datasets
+#' @examples
+#'
+#' require(dplyr)
+#' data(bushfires)
+#' glimpse(bushfires)
+NULL
+
 #' 2D plane in 5D
 #'
 #' This data is simulated to use for testing.
