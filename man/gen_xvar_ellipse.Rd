@@ -4,12 +4,15 @@
 \alias{gen_xvar_ellipse}
 \title{Ellipse matching data center and variance}
 \usage{
-gen_xvar_ellipse(x, n = 100)
+gen_xvar_ellipse(x, n = 100, nstd = 1)
 }
 \arguments{
 \item{x}{multivariate data set.}
 
 \item{n}{number of points to generate}
+
+\item{nstd}{scale factor for size of ellipse, in terms
+of number of standard deviations}
 }
 \value{
 matrix of size n x p

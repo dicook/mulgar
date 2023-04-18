@@ -117,6 +117,8 @@ gen_vc_ellipse <- function(vc, xm, n = 500) {
 #'
 #' @param x multivariate data set.
 #' @param n number of points to generate
+#' @param nstd scale factor for size of ellipse, in terms
+#'   of number of standard deviations
 #' @return matrix of size n x p
 #' @export
 #' @examples
@@ -134,7 +136,7 @@ gen_vc_ellipse <- function(vc, xm, n = 500) {
 #'   clrs <- c(rep("orange", 500), rep("black", nrow(aflw)))
 #'   animate_xy(aflw_all, col=clrs)
 #' }
-gen_xvar_ellipse <- function(x, n=100){
+gen_xvar_ellipse <- function(x, n=100, nstd=1){
 	xm <- apply(x, 2, mean)
 	p <- dim(x)[2]
 	xn <- dim(x)[1]
@@ -143,7 +145,7 @@ gen_xvar_ellipse <- function(x, n=100){
 	sph <- matrix(rnorm(n*p), ncol=p)
 	cntr <- t(apply(sph, 1, norm_vec))
 	cntr <- cntr %*% diag(sqrt(ev$values)) %*% t(ev$vectors)
-	cntr <- cntr + matrix(rep(xm,n), nrow=n, byrow=T)
+	cntr <- cntr + nstd*matrix(rep(xm,n), nrow=n, byrow=T)
 	colnames(cntr) <- colnames(x)
 	cntr <- as.data.frame(cntr)
 	return(cntr)
