@@ -93,7 +93,7 @@ NULL
 #' This data is simulated to use for testing.
 #' It has two dimensions of variability and
 #' three of noise. It is created from a 2 factor
-#' model.
+#' model, where all variables are related.
 #'
 #' \itemize{
 #' x1, x2, x3, x4, x5 are five variables
@@ -115,7 +115,7 @@ NULL
 #' This data is simulated to use for testing.
 #' It has three dimensions of variability and
 #' two of noise. It is created from a 3 factor
-#' model.
+#' model. All variables are linearly associated.
 #'
 #' \itemize{
 #' x1, x2, x3, x4, x5 are five variables

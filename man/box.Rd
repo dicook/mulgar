@@ -11,7 +11,7 @@ A
 This data is simulated to use for testing.
 It has three dimensions of variability and
 two of noise. It is created from a 3 factor
-model.
+model. All variables are linearly associated.
 }
 \details{
 \itemize{

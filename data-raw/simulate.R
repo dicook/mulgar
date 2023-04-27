@@ -9,6 +9,7 @@ x4 <- f1-2*f2+rnorm(100, 0.5)
 x5 <- -f1+2*f2+rnorm(100, 0.5)
 
 plane <- data.frame(x1, x2, x3, x4, x5)
+plane <- apply(plane, 2, function(x) (x-mean(x))/sd(x))
 # Look at it
 library(tourr)
 library(mulgar)
@@ -21,6 +22,8 @@ x3 <- f1+f3+rnorm(200, 0.5)
 x4 <- f2-f3+rnorm(200, 0.5)
 x5 <- -f1+f2+rnorm(200, 0.5)
 box <- data.frame(x1, x2, x3, x4, x5)
+box <- apply(box, 2, function(x) (x-mean(x))/sd(x))
+
 animate_xy(box)
 save(box, file="data/box.rda")
 
