@@ -145,7 +145,7 @@ gen_xvar_ellipse <- function(x, n=100, nstd=1){
 	sph <- matrix(rnorm(n*p), ncol=p)
 	cntr <- t(apply(sph, 1, norm_vec))
 	cntr <- cntr %*% diag(sqrt(ev$values)) %*% t(ev$vectors)
-	cntr <- cntr + nstd*matrix(rep(xm,n), nrow=n, byrow=T)
+	cntr <- nstd*cntr + matrix(rep(xm,n), nrow=n, byrow=T)
 	colnames(cntr) <- colnames(x)
 	cntr <- as.data.frame(cntr)
 	return(cntr)

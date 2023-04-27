@@ -172,3 +172,24 @@ NULL
 #'   geom_point() + theme(aspect.ratio=1)
 NULL
 
+#' Multiple clusters of different sizes, shapes and distance from each other
+#'
+#' This data is originally from http://ifs.tuwien.ac.at/dm/download/multiChallenge-matrix.txt,
+#' and provided as a challenge for non-linear dimension reduction.It was used
+#' as an example in Lee, Laa, Cook (2023) https://doi.org/10.52933/jdssv.v2i3.
+#'
+#' \itemize{
+#' group cluster label
+#' X1, ... X10 are variables
+#' }
+#'
+#' @name multicluster
+#' @docType data
+#' @format A
+#' @keywords datasets
+#' @seealso clusters
+#' @examples
+#' require(ggplot2)
+#' ggplot(simple_clusters, aes(x=X1, y=X2)) +
+#'   geom_point() + theme(aspect.ratio=1)
+NULL
