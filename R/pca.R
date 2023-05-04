@@ -3,7 +3,7 @@
 #' Takes a PCA object returned by `prcomp()`, extracts
 #' the standard deviations of the principal components (PC), and
 #' plots these against the PC number. The guidance line assumes that
-#' all of the variables have been standradised prior to PCA.
+#' all of the variables have been standardised prior to PCA.
 #'
 #' @param pc PCA object
 #' @param guide logical whether to compute and add
