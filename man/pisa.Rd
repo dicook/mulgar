@@ -10,14 +10,14 @@ A
 \description{
 This is data from the 2018 testing, available from
 https://webfs.oecd.org/pisa2018/SPSS_STU_QQQ.zip.
-A subset of the data has been generated using only
-Australian scores, and the simulated scores for
-math, reading and science.
+A subset of the data containing only
+Australia and Indonesia, and the simulated
+scores for math, reading and science.
 }
 \details{
 \itemize{
-CNT Country (AUS, IDN)
-PV1MATH-PV10SCIE simulated scores
+\item CNT Country (Australia, Indonesia)
+\item PV1MATH-PV10SCIE simulated scores for math, reading and science
 }
 }
 \examples{

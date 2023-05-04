@@ -20,7 +20,8 @@ scree a ggplot object
 \description{
 Takes a PCA object returned by \code{prcomp()}, extracts
 the standard deviations of the principal components (PC), and
-plots these against the PC number.
+plots these against the PC number. The guidance line assumes that
+all of the variables have been standradised prior to PCA.
 }
 \examples{
 data(aflw)
