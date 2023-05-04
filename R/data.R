@@ -132,6 +132,28 @@ NULL
 #' ggscree(box_pca)
 NULL
 
+#' Non-linear relationship in 5D
+#'
+#' This data is simulated to use for testing.
+#' It has three dimensions of variability and
+#' two of noise. It is created from a 2 factor
+#' non-linear model. All variables are associated.
+#'
+#' \itemize{
+#' x1, x2, x3, x4, x5 are five variables
+#' }
+#'
+#' @name plane_nonlin
+#' @aliases plane_nonlin
+#' @docType data
+#' @format A
+#' @keywords datasets
+#' @seealso plane, box
+#' @examples
+#' plane_nonlin_pca <- prcomp(plane_nonlin)
+#' ggscree(plane_nonlin_pca)
+NULL
+
 #' Three clusters in 5D
 #'
 #' This data is simulated to use for testing.

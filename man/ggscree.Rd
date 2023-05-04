@@ -4,13 +4,13 @@
 \alias{ggscree}
 \title{This function produces a simple scree plot}
 \usage{
-ggscree(pc, conf = TRUE, cumulative = FALSE)
+ggscree(pc, guide = TRUE, cumulative = FALSE)
 }
 \arguments{
 \item{pc}{PCA object}
 
-\item{conf}{logical whether to compute and add
-simulation confidence bands}
+\item{guide}{logical whether to compute and add
+a typical value of the variance, if the data was full-dimensional}
 
 \item{cumulative}{logical whether to draw cumulative variance}
 }
