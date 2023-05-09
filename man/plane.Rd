@@ -5,7 +5,7 @@
 \alias{plane}
 \title{2D plane in 5D}
 \format{
-A
+A data set with 100 rows and 5 columns
 }
 \description{
 This data is simulated to use for testing.

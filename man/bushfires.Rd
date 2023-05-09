@@ -5,7 +5,7 @@
 \alias{bushfires}
 \title{Australian bushfires 2019-2020}
 \format{
-A
+A dataset with 1021 rows and 60 columns
 }
 \description{
 This data was collated by Weihao (Patrick) Li as part of his
@@ -18,17 +18,17 @@ collected by County Fire Authority personnel.
 }
 \details{
 \itemize{
-id, lon, lat, time unique ide, and spatiotemporal information for each fire ignition
-FOR_CODE, FOR_TYPE, COVER, HEIGHT, FOREST vegetation variables
-rf, arf7-arf720 average rainfall, on that day, and over last 7, ..., 720 days
-se, ase7-ase720 solar exposure, on that day, and over last 7, ..., 720 days
-maxt, amaxt7-amaxt720 max temperature, on that day, and over last 7, ..., 720 days
-mint, amint7-amint720 min temperature, on that day, and over last 7, ..., 720 days
-ws, aws_m0-aws_m24 average wind speed, on that day, and for last 1-24 months
-dist_road, log_dist_road distance to nearest road
-dist_cfa, log_dist_cfa distance to neaest county fire authority facility
-dist_camp, log_dist_camp distance to nearest camp site
-cause predicted ignition cause, accident, arson, burning_off, lightning
+\item id, lon, lat, time unique ide, and spatiotemporal information for each fire ignition
+\item FOR_CODE, FOR_TYPE, COVER, HEIGHT, FOREST vegetation variables
+\item rf, arf7-arf720 average rainfall, on that day, and over last 7, ..., 720 days
+\item se, ase7-ase720 solar exposure, on that day, and over last 7, ..., 720 days
+\item maxt, amaxt7-amaxt720 max temperature, on that day, and over last 7, ..., 720 days
+\item mint, amint7-amint720 min temperature, on that day, and over last 7, ..., 720 days
+\item ws, aws_m0-aws_m24 average wind speed, on that day, and for last 1-24 months
+\item dist_road, log_dist_road distance to nearest road
+\item dist_cfa, log_dist_cfa distance to neaest county fire authority facility
+\item dist_camp, log_dist_camp distance to nearest camp site
+\item cause predicted ignition cause, accident, arson, burning_off, lightning
 }
 }
 \examples{

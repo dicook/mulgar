@@ -5,7 +5,7 @@
 \alias{aflw}
 \title{AFLW player statistics}
 \format{
-A
+A dataset with 381 rows and 35 columns
 }
 \description{
 This is data from the 2021 Women's Australian Football League.

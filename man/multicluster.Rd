@@ -5,7 +5,7 @@
 \alias{multicluster}
 \title{Multiple clusters of different sizes, shapes and distance from each other}
 \format{
-A
+A dataset with 400 rows and 11 columns
 }
 \description{
 This data is originally from http://ifs.tuwien.ac.at/dm/download/multiChallenge-matrix.txt,

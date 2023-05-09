@@ -5,7 +5,7 @@
 \alias{clusters}
 \title{Three clusters in 5D}
 \format{
-A
+A dataset with 300 rows and 6 columns
 }
 \description{
 This data is simulated to use for testing.

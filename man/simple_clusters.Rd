@@ -5,7 +5,7 @@
 \alias{simple_clusters}
 \title{Two clusters in 2D}
 \format{
-A
+A dataset with 137 rows and 3 columns
 }
 \description{
 This data is simulated to use for testing.

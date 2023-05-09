@@ -5,7 +5,7 @@
 \alias{pisa}
 \title{PISA scores}
 \format{
-A
+A data set with 26371 rows and 31 columns
 }
 \description{
 This is data from the 2018 testing, available from

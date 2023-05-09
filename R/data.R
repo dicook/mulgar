@@ -13,7 +13,7 @@
 #'
 #' @name pisa
 #' @docType data
-#' @format A
+#' @format A data set with 26371 rows and 31 columns
 #' @keywords datasets
 #' @examples
 #'
@@ -44,7 +44,7 @@ NULL
 #'
 #' @name aflw
 #' @docType data
-#' @format A
+#' @format A dataset with 381 rows and 35 columns
 #' @keywords datasets
 #' @examples
 #'
@@ -64,22 +64,22 @@ NULL
 #' collected by County Fire Authority personnel.
 #'
 #' \itemize{
-#' id, lon, lat, time unique ide, and spatiotemporal information for each fire ignition
-#' FOR_CODE, FOR_TYPE, COVER, HEIGHT, FOREST vegetation variables
-#' rf, arf7-arf720 average rainfall, on that day, and over last 7, ..., 720 days
-#' se, ase7-ase720 solar exposure, on that day, and over last 7, ..., 720 days
-#' maxt, amaxt7-amaxt720 max temperature, on that day, and over last 7, ..., 720 days
-#' mint, amint7-amint720 min temperature, on that day, and over last 7, ..., 720 days
-#' ws, aws_m0-aws_m24 average wind speed, on that day, and for last 1-24 months
-#' dist_road, log_dist_road distance to nearest road
-#' dist_cfa, log_dist_cfa distance to neaest county fire authority facility
-#' dist_camp, log_dist_camp distance to nearest camp site
-#' cause predicted ignition cause, accident, arson, burning_off, lightning
+#' \item id, lon, lat, time unique ide, and spatiotemporal information for each fire ignition
+#' \item FOR_CODE, FOR_TYPE, COVER, HEIGHT, FOREST vegetation variables
+#' \item rf, arf7-arf720 average rainfall, on that day, and over last 7, ..., 720 days
+#' \item se, ase7-ase720 solar exposure, on that day, and over last 7, ..., 720 days
+#' \item maxt, amaxt7-amaxt720 max temperature, on that day, and over last 7, ..., 720 days
+#' \item mint, amint7-amint720 min temperature, on that day, and over last 7, ..., 720 days
+#' \item ws, aws_m0-aws_m24 average wind speed, on that day, and for last 1-24 months
+#' \item dist_road, log_dist_road distance to nearest road
+#' \item dist_cfa, log_dist_cfa distance to neaest county fire authority facility
+#' \item dist_camp, log_dist_camp distance to nearest camp site
+#' \item cause predicted ignition cause, accident, arson, burning_off, lightning
 #' }
 #'
 #' @name bushfires
 #' @docType data
-#' @format A
+#' @format A dataset with 1021 rows and 60 columns
 #' @keywords datasets
 #' @examples
 #'
@@ -87,6 +87,74 @@ NULL
 #' data(bushfires)
 #' glimpse(bushfires)
 NULL
+
+#' Images of sketches
+#'
+#' This data is a subset of images from https://quickdraw.withgoogle.com
+#' The subset was created using the quickdraw R package at
+#' https://huizezhang-sherry.github.io/quickdraw/.
+#' It has 6 different groups: banana, boomerang, cactus, flip flops,
+#' kangaroo. Each image is 28x28 pixels. This data would be
+#' used to train a classification model.
+#'
+#' \itemize{
+#' \item V1-V784 grey scale 0-255
+#' \item word what the person was asked to draw
+#' \item id unique id for each sketch
+#' }
+#'
+#' @name sketches_train
+#' @docType data
+#' @format A data frame with 5998 rows and 786 columns
+#' @keywords datasets
+#' @examples
+#'
+#' require(ggplot2)
+#' data("sketches_train")
+#' x <- sketches[sample(1:nrow(sketches), 1), ]
+#' x$word
+#' xm <- data.frame(gry=t(as.matrix(x[,1:784])),
+#'         x=rep(1:28, 28),
+#'         y=rep(28:1, rep(28, 28)))
+#' ggplot(xm, aes(x=x, y=y, fill=gry)) +
+#'   geom_tile() +
+#'   scale_fill_gradientn(colors = gray.colors(256, start = 0, end = 1, rev = TRUE )) +
+#'   theme_void() + theme(legend.position="none")
+NULL
+
+#' Images of sketches for testing
+#'
+#' This data is a subset of images from https://quickdraw.withgoogle.com
+#' The subset was created using the quickdraw R package at
+#' https://huizezhang-sherry.github.io/quickdraw/.
+#' It has 6 different groups: banana, boomerang, cactus, flip flops,
+#' kangaroo. Each image is 28x28 pixels.
+#'
+#' \itemize{
+#' \item V1-V784 grey scale 0-255
+#' \item word you need to predict this
+#' \item id unique id for each sketch
+#' }
+#'
+#' @name sketches_test
+#' @docType data
+#' @format A data frame with 1200 rows and 786 columns
+#' @keywords datasets
+#' @seealso sketches_train
+#' @examples
+#'
+#' require(ggplot2)
+#' data("sketches_test")
+#' x <- sketches_test[sample(1:nrow(sketches_test), 1), ]
+#' xm <- data.frame(gry=t(as.matrix(x[,1:784])),
+#'         x=rep(1:28, 28),
+#'         y=rep(28:1, rep(28, 28)))
+#' ggplot(xm, aes(x=x, y=y, fill=gry)) +
+#'   geom_tile() +
+#'   scale_fill_gradientn(colors = gray.colors(256, start = 0, end = 1, rev = TRUE )) +
+#'   theme_void() + theme(legend.position="none")
+NULL
+
 
 #' 2D plane in 5D
 #'
@@ -102,7 +170,7 @@ NULL
 #' @name plane
 #' @aliases plane
 #' @docType data
-#' @format A
+#' @format A data set with 100 rows and 5 columns
 #' @keywords datasets
 #' @seealso box
 #' @examples
@@ -124,7 +192,7 @@ NULL
 #' @name box
 #' @aliases box
 #' @docType data
-#' @format A
+#' @format A dataset with 200 rows and 5 columns
 #' @keywords datasets
 #' @seealso plane
 #' @examples
@@ -146,7 +214,7 @@ NULL
 #' @name plane_nonlin
 #' @aliases plane_nonlin
 #' @docType data
-#' @format A
+#' @format A dataset with 100 rows and 5 columns
 #' @keywords datasets
 #' @seealso plane, box
 #' @examples
@@ -166,7 +234,7 @@ NULL
 #'
 #' @name clusters
 #' @docType data
-#' @format A
+#' @format A dataset with 300 rows and 6 columns
 #' @keywords datasets
 #' @seealso simple_clusters
 #' @examples
@@ -185,7 +253,7 @@ NULL
 #'
 #' @name simple_clusters
 #' @docType data
-#' @format A
+#' @format A dataset with 137 rows and 3 columns
 #' @keywords datasets
 #' @seealso clusters
 #' @examples
@@ -207,7 +275,7 @@ NULL
 #'
 #' @name multicluster
 #' @docType data
-#' @format A
+#' @format A dataset with 400 rows and 11 columns
 #' @keywords datasets
 #' @seealso clusters
 #' @examples
