@@ -6,6 +6,10 @@
 \usage{
 norm_vec(x)
 }
+\arguments{
+\item{x}{numeric vector}
+}
 \description{
-Normalise a vector to have length 1
+Returns the normalised vector, where the sum of
+squares is equal to 1
 }

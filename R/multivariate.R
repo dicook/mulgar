@@ -1,10 +1,20 @@
 #' Normalise a vector to have length 1
+#'
+#' Returns the normalised vector, where the sum of
+#' squares is equal to 1
+#'
+#' @param x numeric vector
 norm_vec<-function(x) {
 	x <- x/calc_norm(x)
 	x
 }
 
 #' Calculate the norm of a vector
+#'
+#' Returns the square root of the sum of squares
+#' of a vector
+#'
+#' @param x numeric vector
 calc_norm <- function(x) { sqrt(sum(x^2)) }
 
 #' Generate a sample from a multivariate normal
@@ -20,21 +30,22 @@ calc_norm <- function(x) { sqrt(sum(x^2)) }
 #' variance-covariance matrix which defines the shape
 #' of the ellipse.
 #' @return matrix of size n x p
+#' @importFrom stats rnorm
 #' @export
 #' @examples
 #' require(ggplot2)
-#' require(tibble)
 #' d <- mulgar::rmvn(n=100, p=2, mn = c(1,1),
 #'                   vc = matrix(c(4, 2, 2, 6),
-#'                          ncol=2, byrow=T))
-#' d <- as_tibble(d, .name_repair="minimal")
-#' ggplot(d, aes(x = V1, y = V2)) + geom_point()
+#'                          ncol=2, byrow=TRUE))
+#' ggplot(data.frame(d), aes(x = x1, y = x2)) +
+#'   geom_point() + theme(aspect.ratio=1)
 rmvn <- function(n=100, p=5, mn=rep(0,p), vc=diag(rep(1,p))) {
 	x <-  matrix(rnorm(n*p), ncol=p)
 	ev <- eigen(vc)
 	vcsqrt <- diag(sqrt(ev$values)) %*% t(ev$vectors)
 	x <- x %*% vcsqrt
 	x <- x + matrix(rep(mn,n), ncol=p,  byrow=T)
+	colnames(x) <- paste0("x", 1:ncol(x))
 	return(x)
 }
 
@@ -90,7 +101,8 @@ calc_mv_dist <- function(x){
 #' @examples
 #' require(ggplot2)
 #' require(tibble)
-#' ell2d <- gen_vc_ellipse(vc = matrix(c(4, 2, 2, 6), ncol=2, byrow=T),
+#' ell2d <- gen_vc_ellipse(vc = matrix(c(4, 2, 2, 6),
+#'                         ncol=2, byrow=TRUE),
 #'                         xm = c(1,1))
 #' ell2d <- as_tibble(ell2d)
 #' ggplot(ell2d, aes(x = V1, y = V2)) + geom_point() +
@@ -128,7 +140,7 @@ gen_vc_ellipse <- function(vc, xm, n = 500) {
 #' require(ggplot2)
 #' ggplot(aflw_vc, aes(x=goals, y=behinds)) + geom_point() +
 #'   theme(aspect.ratio=1)
-#' if (interactive) {
+#' if (interactive()) {
 #'   require(tourr)
 #'   animate_slice(aflw_vc, rescale=TRUE, v_rel=0.02)
 #'   aflw_all <- rbind(aflw_vc, aflw[,c("goals","behinds",

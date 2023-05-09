@@ -14,8 +14,8 @@ three of noise. It is created from a 2 factor
 model, where all variables are related.
 }
 \details{
-\itemize{
-x1, x2, x3, x4, x5 are five variables
+\describe{
+\item{x1, x2, x3, x4, x5}{five numeric variables}
 }
 }
 \examples{

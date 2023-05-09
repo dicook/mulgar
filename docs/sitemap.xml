@@ -103,9 +103,18 @@
     <loc>/reference/plane.html</loc>
   </url>
   <url>
+    <loc>/reference/plane_nonlin.html</loc>
+  </url>
+  <url>
     <loc>/reference/rmvn.html</loc>
   </url>
   <url>
     <loc>/reference/simple_clusters.html</loc>
+  </url>
+  <url>
+    <loc>/reference/sketches_test.html</loc>
+  </url>
+  <url>
+    <loc>/reference/sketches_train.html</loc>
   </url>
 </urlset>

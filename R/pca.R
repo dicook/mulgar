@@ -90,7 +90,7 @@ ggscree <- function(pc, guide=TRUE, cumulative=FALSE) {
 #' plane_pca <- prcomp(plane)
 #' plane_m <- pca_model(plane_pca)
 #' plane_m_d <- rbind(plane_m$points, plane)
-#' if (interactive) {
+#' if (interactive()) {
 #'   require(tourr)
 #'   animate_xy(plane_m_d, edges=plane_m$edges, axes="bottomleft")
 #' }

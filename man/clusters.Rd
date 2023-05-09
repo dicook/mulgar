@@ -13,12 +13,12 @@ It has three elliptical clusters in mostly
 variables 2 and 4. They are not equidistant.
 }
 \details{
-\itemize{
-x1, x2, x3, x4, x5 are five variables
+\describe{
+\item{x1, x2, x3, x4, x5}{five numeric variables}
 }
 }
 \examples{
-clusters_pca <- prcomp(clusters)
+clusters_pca <- prcomp(clusters[,1:5])
 ggscree(clusters_pca)
 }
 \seealso{

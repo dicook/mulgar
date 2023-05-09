@@ -9,11 +9,15 @@ hierfly(data, h = NULL, metric = "euclidean", method = "ward.D2", scale = TRUE)
 \arguments{
 \item{data}{data set}
 
+\item{h}{an hclust object}
+
 \item{metric}{distance metric to use, see \code{\link{dist}} for list of
 possibilities}
 
 \item{method}{cluster distance measure to use, see \code{\link{hclust}} for
 details}
+
+\item{scale}{logical value whether to scale data or not, default TRUE}
 }
 \value{
 list with data and edges and segments
@@ -32,7 +36,7 @@ require(ggdendro)
 ggdendrogram(cl_hw, type = "triangle", labels = FALSE)
 clusters$clw <- factor(cutree(cl_hw, 3))
 cl_hfly <- hierfly(clusters, cl_hw, scale=FALSE)
-if (interactive) {
+if (interactive()) {
   glyphs <- c(16, 46)
   pch <- glyphs[cl_hfly$data$node+1]
   require(colorspace)

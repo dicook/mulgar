@@ -6,6 +6,10 @@
 \usage{
 calc_norm(x)
 }
+\arguments{
+\item{x}{numeric vector}
+}
 \description{
-Calculate the norm of a vector
+Returns the square root of the sum of squares
+of a vector
 }

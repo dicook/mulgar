@@ -13,14 +13,14 @@ and provided as a challenge for non-linear dimension reduction.It was used
 as an example in Lee, Laa, Cook (2023) https://doi.org/10.52933/jdssv.v2i3.
 }
 \details{
-\itemize{
-group cluster label
-X1, ... X10 are variables
+\describe{
+\item{group}{cluster label}
+\item{x1, ... x10}{numeric variables}
 }
 }
 \examples{
 require(ggplot2)
-ggplot(simple_clusters, aes(x=X1, y=X2)) +
+ggplot(multicluster, aes(x=x1, y=x2)) +
   geom_point() + theme(aspect.ratio=1)
 }
 \seealso{

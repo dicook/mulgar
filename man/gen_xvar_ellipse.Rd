@@ -33,7 +33,7 @@ aflw_vc <- gen_xvar_ellipse(aflw[,c("goals","behinds",
 require(ggplot2)
 ggplot(aflw_vc, aes(x=goals, y=behinds)) + geom_point() +
   theme(aspect.ratio=1)
-if (interactive) {
+if (interactive()) {
   require(tourr)
   animate_slice(aflw_vc, rescale=TRUE, v_rel=0.02)
   aflw_all <- rbind(aflw_vc, aflw[,c("goals","behinds",

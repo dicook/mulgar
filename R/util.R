@@ -7,14 +7,14 @@
 #' @export
 #' @examples
 #'
-#' library(tourr)
+#' require(tourr)
 #' t1 <- interpolate(save_history(flea[, 1:6], grand_tour(4), max = 2))
 #' tbl1 <- convert_proj_tibble(t1)
 convert_proj_tibble <- function(t1) {
 	tbl1 <- apply(t1, 2, c)
-	tbl1 <- tbl1 %>%
-		        as_tibble() %>%
-		        mutate(frame = rep(1:dim(t1)[[3]],
+	tbl1 <- tbl1 |>
+		        tibble::as_tibble() |>
+		        dplyr::mutate(frame = rep(1:dim(t1)[[3]],
 		        rep(dim(t1)[[1]], dim(t1)[[3]])))
 	tbl1
 }

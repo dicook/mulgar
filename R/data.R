@@ -6,9 +6,9 @@
 #' Australia and Indonesia, and the simulated
 #' scores for math, reading and science.
 #'
-#' \itemize{
-#' \item CNT Country (Australia, Indonesia)
-#' \item PV1MATH-PV10SCIE simulated scores for math, reading and science
+#' \describe{
+#' \item{CNT}{Country (Australia, Indonesia)}
+#' \item{PV1MATH-PV10SCIE}{simulated scores for math, reading and science}
 #' }
 #'
 #' @name pisa
@@ -37,9 +37,9 @@ NULL
 #' best one could partition the players into groups, while recognising
 #' there are no absolutely distinct and separated groups.
 #'
-#' \itemize{
-#' id, given_name, surname, number, position, team: player identification details
-#' time_pct, ..., clearances: player statistics for the match
+#' \describe{
+#' \item{id, given_name, surname, number, position, team}{player identification details}
+#' \item{time_pct, ..., clearances}{player statistics for the match}
 #' }
 #'
 #' @name aflw
@@ -63,18 +63,18 @@ NULL
 #' cause variable is predicted based on historical fire ignition data
 #' collected by County Fire Authority personnel.
 #'
-#' \itemize{
-#' \item id, lon, lat, time unique ide, and spatiotemporal information for each fire ignition
-#' \item FOR_CODE, FOR_TYPE, COVER, HEIGHT, FOREST vegetation variables
-#' \item rf, arf7-arf720 average rainfall, on that day, and over last 7, ..., 720 days
-#' \item se, ase7-ase720 solar exposure, on that day, and over last 7, ..., 720 days
-#' \item maxt, amaxt7-amaxt720 max temperature, on that day, and over last 7, ..., 720 days
-#' \item mint, amint7-amint720 min temperature, on that day, and over last 7, ..., 720 days
-#' \item ws, aws_m0-aws_m24 average wind speed, on that day, and for last 1-24 months
-#' \item dist_road, log_dist_road distance to nearest road
-#' \item dist_cfa, log_dist_cfa distance to neaest county fire authority facility
-#' \item dist_camp, log_dist_camp distance to nearest camp site
-#' \item cause predicted ignition cause, accident, arson, burning_off, lightning
+#' \describe{
+#' \item{id, lon, lat, time}{unique id, and spatiotemporal information for each fire ignition}
+#' \item{FOR_CODE, FOR_TYPE, COVER, HEIGHT, FOREST}{vegetation variables}
+#' \item{rf, arf7-arf720}{average rainfall, on that day, and over last 7, ..., 720 days}
+#' \item{se, ase7-ase720}{solar exposure, on that day, and over last 7, ..., 720 days}
+#' \item{maxt, amaxt7-amaxt720}{max temperature, on that day, and over last 7, ..., 720 days}
+#' \item{mint, amint7-amint720}{min temperature, on that day, and over last 7, ..., 720 days}
+#' \item{ws, aws_m0-aws_m24}{average wind speed, on that day, and for last 1-24 months}
+#' \item{dist_road, log_dist_road}{distance to nearest road}
+#' \item{dist_cfa, log_dist_cfa}{distance to neaest county fire authority facility}
+#' \item{dist_camp, log_dist_camp}{distance to nearest camp site}
+#' \item{cause}{predicted ignition cause, accident, arson, burning_off, lightning}
 #' }
 #'
 #' @name bushfires
@@ -88,7 +88,7 @@ NULL
 #' glimpse(bushfires)
 NULL
 
-#' Images of sketches
+#' Images of sketches for training
 #'
 #' This data is a subset of images from https://quickdraw.withgoogle.com
 #' The subset was created using the quickdraw R package at
@@ -97,10 +97,10 @@ NULL
 #' kangaroo. Each image is 28x28 pixels. This data would be
 #' used to train a classification model.
 #'
-#' \itemize{
-#' \item V1-V784 grey scale 0-255
-#' \item word what the person was asked to draw
-#' \item id unique id for each sketch
+#' \describe{
+#' \item{V1-V784}{grey scale 0-255}
+#' \item{word}{what the person was asked to draw}
+#' \item{id}{unique id for each sketch}
 #' }
 #'
 #' @name sketches_train
@@ -111,8 +111,8 @@ NULL
 #'
 #' require(ggplot2)
 #' data("sketches_train")
-#' x <- sketches[sample(1:nrow(sketches), 1), ]
-#' x$word
+#' x <- sketches_train[sample(1:nrow(sketches_train), 1), ]
+#' # print(x$word)
 #' xm <- data.frame(gry=t(as.matrix(x[,1:784])),
 #'         x=rep(1:28, 28),
 #'         y=rep(28:1, rep(28, 28)))
@@ -130,10 +130,10 @@ NULL
 #' It has 6 different groups: banana, boomerang, cactus, flip flops,
 #' kangaroo. Each image is 28x28 pixels.
 #'
-#' \itemize{
-#' \item V1-V784 grey scale 0-255
-#' \item word you need to predict this
-#' \item id unique id for each sketch
+#' \describe{
+#' \item{V1-V784}{grey scale 0-255}
+#' \item{word}{all NA, you need to predict this}
+#' \item{id}{unique id for each sketch}
 #' }
 #'
 #' @name sketches_test
@@ -163,8 +163,8 @@ NULL
 #' three of noise. It is created from a 2 factor
 #' model, where all variables are related.
 #'
-#' \itemize{
-#' x1, x2, x3, x4, x5 are five variables
+#' \describe{
+#' \item{x1, x2, x3, x4, x5}{five numeric variables}
 #' }
 #'
 #' @name plane
@@ -185,8 +185,8 @@ NULL
 #' two of noise. It is created from a 3 factor
 #' model. All variables are linearly associated.
 #'
-#' \itemize{
-#' x1, x2, x3, x4, x5 are five variables
+#' \describe{
+#' \item{x1, x2, x3, x4, x5}{five numeric variables}
 #' }
 #'
 #' @name box
@@ -207,8 +207,8 @@ NULL
 #' two of noise. It is created from a 2 factor
 #' non-linear model. All variables are associated.
 #'
-#' \itemize{
-#' x1, x2, x3, x4, x5 are five variables
+#' \describe{
+#' \item{x1, x2, x3, x4, x5}{five numeric variables}
 #' }
 #'
 #' @name plane_nonlin
@@ -228,8 +228,8 @@ NULL
 #' It has three elliptical clusters in mostly
 #' variables 2 and 4. They are not equidistant.
 #'
-#' \itemize{
-#' x1, x2, x3, x4, x5 are five variables
+#' \describe{
+#' \item{x1, x2, x3, x4, x5}{five numeric variables}
 #' }
 #'
 #' @name clusters
@@ -238,7 +238,7 @@ NULL
 #' @keywords datasets
 #' @seealso simple_clusters
 #' @examples
-#' clusters_pca <- prcomp(clusters)
+#' clusters_pca <- prcomp(clusters[,1:5])
 #' ggscree(clusters_pca)
 NULL
 
@@ -247,8 +247,8 @@ NULL
 #' This data is simulated to use for testing.
 #' It has two spherical clusters, and two variables.
 #'
-#' \itemize{
-#' x1, x2 are variables
+#' \describe{
+#' \item{x1, x2}{two numeric variables}
 #' }
 #'
 #' @name simple_clusters
@@ -258,7 +258,7 @@ NULL
 #' @seealso clusters
 #' @examples
 #' require(ggplot2)
-#' ggplot(simple_clusters, aes(x=X1, y=X2)) +
+#' ggplot(simple_clusters, aes(x=x1, y=x2)) +
 #'   geom_point() + theme(aspect.ratio=1)
 NULL
 
@@ -268,9 +268,9 @@ NULL
 #' and provided as a challenge for non-linear dimension reduction.It was used
 #' as an example in Lee, Laa, Cook (2023) https://doi.org/10.52933/jdssv.v2i3.
 #'
-#' \itemize{
-#' group cluster label
-#' X1, ... X10 are variables
+#' \describe{
+#' \item{group}{cluster label}
+#' \item{x1, ... x10}{numeric variables}
 #' }
 #'
 #' @name multicluster
@@ -280,6 +280,6 @@ NULL
 #' @seealso clusters
 #' @examples
 #' require(ggplot2)
-#' ggplot(simple_clusters, aes(x=X1, y=X2)) +
+#' ggplot(multicluster, aes(x=x1, y=x2)) +
 #'   geom_point() + theme(aspect.ratio=1)
 NULL

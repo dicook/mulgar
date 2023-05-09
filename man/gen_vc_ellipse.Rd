@@ -26,7 +26,8 @@ on the surface of a sphere.
 \examples{
 require(ggplot2)
 require(tibble)
-ell2d <- gen_vc_ellipse(vc = matrix(c(4, 2, 2, 6), ncol=2, byrow=T),
+ell2d <- gen_vc_ellipse(vc = matrix(c(4, 2, 2, 6),
+                        ncol=2, byrow=TRUE),
                         xm = c(1,1))
 ell2d <- as_tibble(ell2d)
 ggplot(ell2d, aes(x = V1, y = V2)) + geom_point() +

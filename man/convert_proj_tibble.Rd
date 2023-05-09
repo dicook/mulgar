@@ -15,7 +15,7 @@ a tibble with numbered projections
 }
 \examples{
 
-library(tourr)
+require(tourr)
 t1 <- interpolate(save_history(flea[, 1:6], grand_tour(4), max = 2))
 tbl1 <- convert_proj_tibble(t1)
 }

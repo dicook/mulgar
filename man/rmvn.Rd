@@ -27,10 +27,9 @@ multivariate normal distribution
 }
 \examples{
 require(ggplot2)
-require(tibble)
 d <- mulgar::rmvn(n=100, p=2, mn = c(1,1),
                   vc = matrix(c(4, 2, 2, 6),
-                         ncol=2, byrow=T))
-d <- as_tibble(d, .name_repair="minimal")
-ggplot(d, aes(x = V1, y = V2)) + geom_point()
+                         ncol=2, byrow=TRUE))
+ggplot(data.frame(d), aes(x = x1, y = x2)) +
+  geom_point() + theme(aspect.ratio=1)
 }

@@ -12,13 +12,13 @@ This data is simulated to use for testing.
 It has two spherical clusters, and two variables.
 }
 \details{
-\itemize{
-x1, x2 are variables
+\describe{
+\item{x1, x2}{two numeric variables}
 }
 }
 \examples{
 require(ggplot2)
-ggplot(simple_clusters, aes(x=X1, y=X2)) +
+ggplot(simple_clusters, aes(x=x1, y=x2)) +
   geom_point() + theme(aspect.ratio=1)
 }
 \seealso{

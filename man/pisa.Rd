@@ -15,9 +15,9 @@ Australia and Indonesia, and the simulated
 scores for math, reading and science.
 }
 \details{
-\itemize{
-\item CNT Country (Australia, Indonesia)
-\item PV1MATH-PV10SCIE simulated scores for math, reading and science
+\describe{
+\item{CNT}{Country (Australia, Indonesia)}
+\item{PV1MATH-PV10SCIE}{simulated scores for math, reading and science}
 }
 }
 \examples{

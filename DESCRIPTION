@@ -25,7 +25,8 @@ Imports:
     ggplot2,
     tidyr,
     dplyr,
-    purrr
+    purrr,
+    stats
 Suggests:
     ggdendro,
     colorspace,

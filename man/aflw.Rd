@@ -22,9 +22,9 @@ best one could partition the players into groups, while recognising
 there are no absolutely distinct and separated groups.
 }
 \details{
-\itemize{
-id, given_name, surname, number, position, team: player identification details
-time_pct, ..., clearances: player statistics for the match
+\describe{
+\item{id, given_name, surname, number, position, team}{player identification details}
+\item{time_pct, ..., clearances}{player statistics for the match}
 }
 }
 \examples{
