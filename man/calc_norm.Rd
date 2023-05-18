@@ -13,3 +13,7 @@ calc_norm(x)
 Returns the square root of the sum of squares
 of a vector
 }
+\examples{
+x <- rnorm(5)
+calc_norm(x)
+}

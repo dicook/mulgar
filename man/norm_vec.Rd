@@ -13,3 +13,7 @@ norm_vec(x)
 Returns the normalised vector, where the sum of
 squares is equal to 1
 }
+\examples{
+x <- rnorm(5)
+norm_vec(x)
+}

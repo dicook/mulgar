@@ -4,6 +4,10 @@
 #' squares is equal to 1
 #'
 #' @param x numeric vector
+#' @export
+#' @examples
+#' x <- rnorm(5)
+#' norm_vec(x)
 norm_vec<-function(x) {
 	x <- x/calc_norm(x)
 	x
@@ -15,6 +19,11 @@ norm_vec<-function(x) {
 #' of a vector
 #'
 #' @param x numeric vector
+#' @export
+#' @export
+#' @examples
+#' x <- rnorm(5)
+#' calc_norm(x)
 calc_norm <- function(x) { sqrt(sum(x^2)) }
 
 #' Generate a sample from a multivariate normal
@@ -163,3 +172,32 @@ gen_xvar_ellipse <- function(x, n=100, nstd=1){
 	return(cntr)
 }
 
+#' Compute pooled variance-covariance matrix
+#'
+#' This function computes the group variance-covariance
+#' matrices, and produces a weighted average. It is useful
+#' for examining the linear discriminant analysis model.
+#'
+#' @param x multivariate data set.
+#' @param cl class variable
+#' @param prior prior probability for each class, must sum to 1, default all equal
+#' @export
+#' @examples
+#' data(clusters)
+#' pooled_vc(clusters[,1:5], clusters$cl)
+pooled_vc <- function(x, cl,
+		prior=rep(1/length(unique(cl)), length(unique(cl)))) {
+
+	stopifnot(abs(sum(prior)-1) < 0.001)
+
+	classes <- unique(cl)
+  ncl <- length(classes)
+  vc_all <- matrix(0, ncol(x), ncol(x))
+  for (i in 1:ncl) {
+    x_sub <- x[cl==classes[i],]
+    vc <- data.frame(var(x_sub))
+    vc_all <- vc_all + vc*prior[i]
+  }
+
+  return(vc_all)
+}
