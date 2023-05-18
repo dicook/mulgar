@@ -37,6 +37,7 @@ ggdendrogram(cl_hw, type = "triangle", labels = FALSE)
 clusters$clw <- factor(cutree(cl_hw, 3))
 cl_hfly <- hierfly(clusters, cl_hw, scale=FALSE)
 if (interactive()) {
+  require(tourr)
   glyphs <- c(16, 46)
   pch <- glyphs[cl_hfly$data$node+1]
   require(colorspace)
