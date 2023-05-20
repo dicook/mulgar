@@ -14,6 +14,7 @@ It has two spherical clusters, and two variables.
 \details{
 \describe{
 \item{x1, x2}{two numeric variables}
+\item{cl class variable}
 }
 }
 \examples{

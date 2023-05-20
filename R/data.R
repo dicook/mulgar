@@ -230,6 +230,7 @@ NULL
 #'
 #' \describe{
 #' \item{x1, x2, x3, x4, x5}{five numeric variables}
+#' \item{cl class variable}
 #' }
 #'
 #' @name clusters
@@ -249,6 +250,7 @@ NULL
 #'
 #' \describe{
 #' \item{x1, x2}{two numeric variables}
+#' \item{cl class variable}
 #' }
 #'
 #' @name simple_clusters

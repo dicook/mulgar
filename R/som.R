@@ -5,45 +5,73 @@
 #' from the data so they can be seen relative to the grid.
 #' This allows the clustering of points by SOM to be inspected.
 #'
-#' @param x multivariate data set
-#' @param x_som object returned by som
+#' @param x_som object returned by kohonen::som
+#' @param j_val amount of jitter, should range from 0-1, default 0.3
+#' @return
+#' \itemise{
+#' \item data this object contains
+#'   \itemise{
+#'     \item original variables from the data
+#'     \item map1, map2 location of observations in 2D som map, jittered
+#'     \item distance distances between observations and the closest node
+#'     \item id row id of data
+#'   }
+#' \item net this object contains
+#'   \itemise{
+#'     \item values of the nodes in the high-d space
+#'     \item map1, map2 nodes of the som net
+#'     \item distance distances between observations and the closest node
+#'     \item id row id of net
+#'   }
+#'   \item edges from, to specifying row ids of net to connect with lines
+#'   \item edges_s x, xend, y, yend for segments to draw lines to form 2D map
+#' }
 #' @export
 #' @examples
-#' cat("make an example\n")
-f_som <- function(x, x_som) {
-	xmx <- jitter(x.som$visual$x, factor=2)
-	xmy <- jitter(x.som$visual$y, factor=2)
-	ncols <- ncol(x)
-	som_map <- cbind(x, xmx, xmy)
-	dimnames(som_map)[[2]][ncols+1] <- "Map 1"
-	dimnames(som_map)[[2]][ncols+2] <- "Map 2"
-	x_grid <- cbind(x_som$code, x_som$code.sum[,1:2])
-	dimnames(x_grid)[[2]] <- dimnames(som_map)[[2]]
-	x_clust <- rbind(som_map, x_grid)
-	x_clust
+#' data(clusters)
+#' c_grid <- kohonen::somgrid(xdim = 5, ydim = 5,
+#'   topo = 'rectangular')
+#' c_som <- kohonen::som(as.matrix(clusters[,1:5]), grid = c_grid)
+#' c_data_net <- f_som(c_som)
+#' require(ggplot2)
+#' ggplot() +
+#'   geom_segment(data=c_data_net$edges_s,
+#'     aes(x=x, xend=xend, y=y, yend=yend)) +
+#'   geom_point(data=c_data_net$data, aes(x=map1, y=map2),
+#'     colour="orange", size=2, alpha=0.5)
+f_som <- function(x_som, j_val=0.5) {
+	data <- data.frame(
+		x_som$data[[1]],
+		map1 = jitter(x_som$grid$pts[x_som$unit.classif, 1], j_val),
+		map2 = jitter(x_som$grid$pts[x_som$unit.classif, 2], j_val),
+		distance = x_som$distances,
+		id = factor(1:nrow(x_som$data[[1]]))
+	)
+
+	net <- data.frame(
+		x_som$codes,
+		map1 = x_som$grid$pts[, 1],
+		map2 = x_som$grid$pts[, 2],
+		id = factor(paste("net"), 1:nrow(x_som$grid$pts))
+	)
+	rownames(net) <- paste("net", 1:nrow(net), sep="")
+
+	xs <- x_som$grid$xdim
+	ys <- x_som$grid$ydim
+	netlines <- with(expand.grid(y=1:(xs-1), x=1:(ys)), rbind(
+		cbind((x - 1) * xs + y, (x - 1)     * xs + y + 1),
+		cbind((x - 1) * xs + y,   x         * xs + y)
+	))
+	netlines <- netlines[-(nrow(netlines):(nrow(netlines)-xs+2)),]
+	netlines <- rbind(netlines, cbind(1:(ys-1) * xs, 2:ys * xs))
+	colnames(netlines) <- c("from", "to")
+	netlines <- data.frame(netlines)
+
+	net_segs <- data.frame(x=net[netlines[,1], "map1"],
+												 xend=net[netlines[,2], "map1"],
+												 y=net[netlines[,1], "map2"],
+												 yend=net[netlines[,2], "map2"])
+
+	return(list(data=data, net=net, edges=netlines, edges_s=net_segs))
 }
 
-#' Generate the SOM net
-#'
-#' Generates the edge set from an SOM model.
-#' Combine this with the data matrix to display
-#' the model in p-dimensional space.
-#'
-#' @param x_som object returned by som
-#' @export
-#' @examples
-#' cat("make an example\n")
-f_som_net <- function(x_som) {
-	x_net <- NULL
-	for (i in 1:x_som$xdim) {
-		for (j in 1:x_som$ydim) {
-			if (j < x_som$ydim)
-				x_net <- rbind(x_net, c((i-1)*x_som$xdim + j,
-														 (i-1)*x_som$xdim + j + 1))
-			if (i < x.som$xdim) x_net <- rbind(x_net,
-																		 c((i-1)*x_som$xdim + j,
-																		 	i*x_som$xdim + j))
-		}
-	}
-	return(x_net)
-}

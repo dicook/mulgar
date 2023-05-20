@@ -4,7 +4,7 @@
 \alias{gen_vc_ellipse}
 \title{Generate points on the surface of an ellipse}
 \usage{
-gen_vc_ellipse(vc, xm, n = 500)
+gen_vc_ellipse(vc, xm = rep(0, ncol(vc)), n = 500)
 }
 \arguments{
 \item{vc}{symmetric square matrix describing the

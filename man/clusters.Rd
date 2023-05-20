@@ -15,6 +15,7 @@ variables 2 and 4. They are not equidistant.
 \details{
 \describe{
 \item{x1, x2, x3, x4, x5}{five numeric variables}
+\item{cl class variable}
 }
 }
 \examples{

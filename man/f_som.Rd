@@ -4,12 +4,32 @@
 \alias{f_som}
 \title{Process the output from SOM to display the map and data}
 \usage{
-f_som(x, x_som)
+f_som(x_som, j_val = 0.5)
 }
 \arguments{
-\item{x}{multivariate data set}
+\item{x_som}{object returned by kohonen::som}
 
-\item{x_som}{object returned by som}
+\item{j_val}{amount of jitter, should range from 0-1, default 0.3}
+}
+\value{
+\itemise{
+\item data this object contains
+\itemise{
+\item original variables from the data
+\item map1, map2 location of observations in 2D som map, jittered
+\item distance distances between observations and the closest node
+\item id row id of data
+}
+\item net this object contains
+\itemise{
+\item values of the nodes in the high-d space
+\item map1, map2 nodes of the som net
+\item distance distances between observations and the closest node
+\item id row id of net
+}
+\item edges from, to specifying row ids of net to connect with lines
+\item edges_s x, xend, y, yend for segments to draw lines to form 2D map
+}
 }
 \description{
 This function generates a grid of points to match the
@@ -18,5 +38,15 @@ from the data so they can be seen relative to the grid.
 This allows the clustering of points by SOM to be inspected.
 }
 \examples{
-cat("make an example\n")
+data(clusters)
+c_grid <- kohonen::somgrid(xdim = 5, ydim = 5,
+  topo = 'rectangular')
+c_som <- kohonen::som(as.matrix(clusters[,1:5]), grid = c_grid)
+c_data_net <- f_som(c_som)
+require(ggplot2)
+ggplot() +
+  geom_segment(data=c_data_net$edges_s,
+    aes(x=x, xend=xend, y=y, yend=yend)) +
+  geom_point(data=c_data_net$data, aes(x=map1, y=map2),
+    colour="orange", size=2, alpha=0.5)
 }

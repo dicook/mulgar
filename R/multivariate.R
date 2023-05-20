@@ -116,7 +116,7 @@ calc_mv_dist <- function(x){
 #' ell2d <- as_tibble(ell2d)
 #' ggplot(ell2d, aes(x = V1, y = V2)) + geom_point() +
 #'   theme(aspect.ratio=1)
-gen_vc_ellipse <- function(vc, xm, n = 500) {
+gen_vc_ellipse <- function(vc, xm=rep(0, ncol(vc)), n = 500) {
 	p <- ncol(vc)
 	x <- geozoo::sphere.hollow(p, n)$points
 
@@ -125,6 +125,9 @@ gen_vc_ellipse <- function(vc, xm, n = 500) {
 	x <- x%*%vc2
 
 	x <- x + matrix(rep(xm, each = n), ncol = p)
+	colnames(x) <- colnames(vc)
+
+	return(x)
 }
 
 #' Ellipse matching data center and variance
