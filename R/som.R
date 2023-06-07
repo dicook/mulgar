@@ -8,23 +8,23 @@
 #' @param x_som object returned by kohonen::som
 #' @param j_val amount of jitter, should range from 0-1, default 0.3
 #' @return
-#' \itemise{
+#' \itemize{
 #' \item data this object contains
-#'   \itemise{
+#'   \itemize{
 #'     \item original variables from the data
 #'     \item map1, map2 location of observations in 2D som map, jittered
 #'     \item distance distances between observations and the closest node
 #'     \item id row id of data
 #'   }
 #' \item net this object contains
-#'   \itemise{
+#'   \itemize{
 #'     \item values of the nodes in the high-d space
 #'     \item map1, map2 nodes of the som net
 #'     \item distance distances between observations and the closest node
 #'     \item id row id of net
 #'   }
-#'   \item edges from, to specifying row ids of net to connect with lines
-#'   \item edges_s x, xend, y, yend for segments to draw lines to form 2D map
+#' \item edges from, to specifying row ids of net to connect with lines
+#' \item edges_s x, xend, y, yend for segments to draw lines to form 2D map
 #' }
 #' @export
 #' @examples

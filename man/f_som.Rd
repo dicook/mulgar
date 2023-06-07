@@ -12,16 +12,16 @@ f_som(x_som, j_val = 0.5)
 \item{j_val}{amount of jitter, should range from 0-1, default 0.3}
 }
 \value{
-\itemise{
+\itemize{
 \item data this object contains
-\itemise{
+\itemize{
 \item original variables from the data
 \item map1, map2 location of observations in 2D som map, jittered
 \item distance distances between observations and the closest node
 \item id row id of data
 }
 \item net this object contains
-\itemise{
+\itemize{
 \item values of the nodes in the high-d space
 \item map1, map2 nodes of the som net
 \item distance distances between observations and the closest node

@@ -230,7 +230,7 @@ NULL
 #'
 #' \describe{
 #' \item{x1, x2, x3, x4, x5}{five numeric variables}
-#' \item{cl class variable}
+#' \item{cl}{class variable}
 #' }
 #'
 #' @name clusters
@@ -250,7 +250,7 @@ NULL
 #'
 #' \describe{
 #' \item{x1, x2}{two numeric variables}
-#' \item{cl class variable}
+#' \item{cl}{class variable}
 #' }
 #'
 #' @name simple_clusters
@@ -283,5 +283,24 @@ NULL
 #' @examples
 #' require(ggplot2)
 #' ggplot(multicluster, aes(x=x1, y=x2)) +
+#'   geom_point() + theme(aspect.ratio=1)
+NULL
+
+#' Challenge data sets
+#'
+#' Simulated data with different structure
+#'
+#' \describe{
+#' \item{x1, x2, ... }{numeric variables}
+#' }
+#'
+#' @name c1
+#' @aliases c2 c3 c4 c5 c6 c7 c8 c9 10 c11 c12
+#' @docType data
+#' @format A datasets with differing number of rows and columns
+#' @keywords datasets
+#' @examples
+#' require(ggplot2)
+#' ggplot(c1, aes(x=x1, y=x2)) +
 #'   geom_point() + theme(aspect.ratio=1)
 NULL
