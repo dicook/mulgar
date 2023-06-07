@@ -19,6 +19,7 @@ variables 2 and 4. They are not equidistant.
 }
 }
 \examples{
+
 clusters_pca <- prcomp(clusters[,1:5])
 ggscree(clusters_pca)
 }

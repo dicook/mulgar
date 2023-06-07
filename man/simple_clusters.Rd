@@ -18,6 +18,7 @@ It has two spherical clusters, and two variables.
 }
 }
 \examples{
+
 require(ggplot2)
 ggplot(simple_clusters, aes(x=x1, y=x2)) +
   geom_point() + theme(aspect.ratio=1)

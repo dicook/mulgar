@@ -19,6 +19,7 @@ model. All variables are linearly associated.
 }
 }
 \examples{
+
 box_pca <- prcomp(box)
 ggscree(box_pca)
 }

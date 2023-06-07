@@ -19,6 +19,7 @@ as an example in Lee, Laa, Cook (2023) https://doi.org/10.52933/jdssv.v2i3.
 }
 }
 \examples{
+
 require(ggplot2)
 ggplot(multicluster, aes(x=x1, y=x2)) +
   geom_point() + theme(aspect.ratio=1)

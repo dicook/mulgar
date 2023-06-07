@@ -19,6 +19,7 @@ non-linear model. All variables are associated.
 }
 }
 \examples{
+
 plane_nonlin_pca <- prcomp(plane_nonlin)
 ggscree(plane_nonlin_pca)
 }

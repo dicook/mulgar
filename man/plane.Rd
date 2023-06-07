@@ -19,6 +19,7 @@ model, where all variables are related.
 }
 }
 \examples{
+
 plane_pca <- prcomp(plane)
 ggscree(plane_pca)
 }

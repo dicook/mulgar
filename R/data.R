@@ -174,6 +174,7 @@ NULL
 #' @keywords datasets
 #' @seealso box
 #' @examples
+#'
 #' plane_pca <- prcomp(plane)
 #' ggscree(plane_pca)
 NULL
@@ -196,6 +197,7 @@ NULL
 #' @keywords datasets
 #' @seealso plane
 #' @examples
+#'
 #' box_pca <- prcomp(box)
 #' ggscree(box_pca)
 NULL
@@ -218,6 +220,7 @@ NULL
 #' @keywords datasets
 #' @seealso plane, box
 #' @examples
+#'
 #' plane_nonlin_pca <- prcomp(plane_nonlin)
 #' ggscree(plane_nonlin_pca)
 NULL
@@ -239,6 +242,7 @@ NULL
 #' @keywords datasets
 #' @seealso simple_clusters
 #' @examples
+#'
 #' clusters_pca <- prcomp(clusters[,1:5])
 #' ggscree(clusters_pca)
 NULL
@@ -259,6 +263,7 @@ NULL
 #' @keywords datasets
 #' @seealso clusters
 #' @examples
+#'
 #' require(ggplot2)
 #' ggplot(simple_clusters, aes(x=x1, y=x2)) +
 #'   geom_point() + theme(aspect.ratio=1)
@@ -281,6 +286,7 @@ NULL
 #' @keywords datasets
 #' @seealso clusters
 #' @examples
+#'
 #' require(ggplot2)
 #' ggplot(multicluster, aes(x=x1, y=x2)) +
 #'   geom_point() + theme(aspect.ratio=1)
@@ -302,6 +308,7 @@ NULL
 #' @keywords datasets
 #' @seealso clusters
 #' @examples
+#'
 #' require(ggplot2)
 #' ggplot(clusters_nonlin, aes(x=x1, y=x2)) +
 #'   geom_point() +
