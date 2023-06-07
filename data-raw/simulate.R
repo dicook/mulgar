@@ -128,3 +128,46 @@ cl_hw <- hclust(dist(simple_clusters[,1:2]),
 								method="ward.D2")
 cl_hfly <- hierfly(simple_clusters, cl_hw, scale=FALSE)
 debug(hierfly)
+
+# nonlinear and clusters
+set.seed(202300002)
+theta = runif(568, 0.20,0.60 * pi)
+x = cos(theta) + rnorm(568, 0, 0.03)
+y = sin(theta) + rnorm(568, 0, 0.03)
+
+z <- rep(0, 568) + rnorm(568, 0, 0.03)
+w <- rep(0, 568) - rnorm(568, 0, 0.03)
+
+df1 <- data.frame(x1 = x, x2 = y, x3 = z, x4 = w)
+animate_xy(df1)
+
+theta = runif(601, 0,1.80 * pi)
+x = theta
+y = sin(theta)
+
+z <- rep(0, 601) + rnorm(601, 1, 0.5)
+w <- rep(0, 601) - rnorm(601, 1, 0.03)
+
+df2 <- data.frame(x1 = z, x2 = w, x3 = x, x4 = y)
+animate_xy(df2)
+
+df3 <- data.frame(x1=rnorm(57, mean=1, sd=0.1),
+									x2=rnorm(57, mean=1, sd=0.1),
+									x3=rnorm(57, mean=1, sd=0.1),
+									x4=rnorm(57, mean=1, sd=0.1))
+
+df4 <- data.frame(x1=rnorm(42, mean=-1, sd=0.1),
+									x2=rnorm(42, mean=-1, sd=0.1),
+									x3=rnorm(42, mean=1, sd=0.1),
+									x4=rnorm(42, mean=1, sd=0.1))
+
+df <- rbind(df1, df2, df3, df4)
+animate_xy(df)
+
+set.seed(42)
+df_tsne <- Rtsne(df) #, pca=FALSE, perplexity=30, theta=0.0)
+ggplot(as.data.frame(df_tsne$Y), aes(x=V1, y=V2)) +
+	geom_point() + theme(aspect.ratio=1)
+
+clusters_nonlin <- df
+save(clusters_nonlin, file="data/clusters_nonlin")
