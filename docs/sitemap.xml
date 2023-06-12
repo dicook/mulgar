@@ -28,6 +28,9 @@
     <loc>/reference/bushfires.html</loc>
   </url>
   <url>
+    <loc>/reference/c1.html</loc>
+  </url>
+  <url>
     <loc>/reference/calc_mv_dist.html</loc>
   </url>
   <url>
@@ -35,6 +38,9 @@
   </url>
   <url>
     <loc>/reference/clusters.html</loc>
+  </url>
+  <url>
+    <loc>/reference/clusters_nonlin.html</loc>
   </url>
   <url>
     <loc>/reference/convert_proj_tibble.html</loc>
@@ -119,5 +125,8 @@
   </url>
   <url>
     <loc>/reference/sketches_train.html</loc>
+  </url>
+  <url>
+    <loc>/reference/som_model.html</loc>
   </url>
 </urlset>

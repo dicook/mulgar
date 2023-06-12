@@ -40,7 +40,7 @@
 #'     aes(x=x, xend=xend, y=y, yend=yend)) +
 #'   geom_point(data=c_data_net$data, aes(x=map1, y=map2),
 #'     colour="orange", size=2, alpha=0.5)
-f_som <- function(x_som, j_val=0.5) {
+som_model <- function(x_som, j_val=0.5) {
 	data <- data.frame(
 		x_som$data[[1]],
 		map1 = jitter(x_som$grid$pts[x_som$unit.classif, 1], j_val),
