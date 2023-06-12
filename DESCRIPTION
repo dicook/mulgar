@@ -25,7 +25,8 @@ Imports:
     tidyr,
     dplyr,
     purrr,
-    stats
+    stats,
+    methods
 Suggests:
     tourr,
     ggdendro,

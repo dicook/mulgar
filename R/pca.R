@@ -11,6 +11,7 @@
 #' @param cumulative logical whether to draw cumulative variance
 #'
 #' @return scree a ggplot object
+#' @importFrom methods is
 #' @export
 #' @examples
 #' data(aflw)
@@ -22,7 +23,7 @@
 #' ggscree(aflw_pca)
 ggscree <- function(pc, guide=TRUE, cumulative=FALSE) {
   # Check input
-	try (if(class(pc) != "prcomp") stop("You need to provide a prcomp object."))
+	try (if(!is(pc, "prcomp")) stop("You need to provide a prcomp object."))
 
 	# Generate guidance line
   if (guide) {
@@ -84,6 +85,7 @@ ggscree <- function(pc, guide=TRUE, cumulative=FALSE) {
 #' @param s scale model, default=1
 #'
 #' @return a list of points and edges
+#' @importFrom methods is
 #' @export
 #' @examples
 #' data(plane)
@@ -96,7 +98,7 @@ ggscree <- function(pc, guide=TRUE, cumulative=FALSE) {
 #' }
 pca_model <- function(pc, d=2, s=1) {
 	# Check input
-	try (if (class(pc) != "prcomp") stop("You need to provide a prcomp object."))
+	try (if (!is(pc, "prcomp")) stop("You need to provide a prcomp object."))
 
 	n <- nrow(pc$x)
 	p <- ncol(pc$x)

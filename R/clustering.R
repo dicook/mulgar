@@ -113,6 +113,7 @@ combinerows <- function(df, cvar) {
 #' @param top number to indicate how many models to show, default "all"
 #'
 #' @return mc_bic a ggplot object
+#' @importFrom methods is
 #' @export
 #' @examples
 #' require(mclust)
@@ -127,7 +128,7 @@ combinerows <- function(df, cvar) {
 #' ggmcbic(clusters_BIC, cl=2:5, top=3)
 ggmcbic <- function(mc, cl=1:nrow(mc), top=ncol(mc)) {
 	# Check input
-	try (if(class(mc) != "mclustBIC") stop("You need to provide an mclustBIC object."))
+	try (if(!is(mc, "mclustBIC")) stop("You need to provide an mclustBIC object."))
 
   # Convert to a tibble, and long form
 	mc_df <- tibble::as_tibble(unclass(mc))
@@ -174,6 +175,7 @@ ggmcbic <- function(mc, cl=1:nrow(mc), top=ncol(mc)) {
 #' @param npts Number of points to simulate for each cluster, default 100
 #'
 #' @return mc_ellipses data frame
+#' @importFrom methods is
 #' @export
 #' @examples
 #' require(mclust)
@@ -192,7 +194,7 @@ ggmcbic <- function(mc, cl=1:nrow(mc), top=ncol(mc)) {
 #'   theme(aspect.ratio=1, legend.position="none")
 mc_ellipse <- function(mc, npts=100) {
 	# Check input
-	try (if(class(mc) != "Mclust") stop("You need to provide an Mclust object."))
+	try (if(!is(mc, "Mclust")) stop("You need to provide an Mclust object."))
 
   # Extract parameter estimates
 	mn <- mc$parameters$mean
