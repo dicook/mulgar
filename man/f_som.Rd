@@ -38,6 +38,7 @@ from the data so they can be seen relative to the grid.
 This allows the clustering of points by SOM to be inspected.
 }
 \examples{
+require(kohonen)
 data(clusters)
 c_grid <- kohonen::somgrid(xdim = 5, ydim = 5,
   topo = 'rectangular')

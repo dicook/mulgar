@@ -28,6 +28,7 @@
 #' }
 #' @export
 #' @examples
+#' require(kohonen)
 #' data(clusters)
 #' c_grid <- kohonen::somgrid(xdim = 5, ydim = 5,
 #'   topo = 'rectangular')
