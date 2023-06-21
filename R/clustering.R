@@ -35,8 +35,9 @@
 #'   animate_xy(cl_hfly$data[,1:5], edges=cl_hfly$edges,
 #'     col=pcol, pch=pch, edges.col=ecol,
 #'     axes="bottomleft")
-#'   }
+#' }
 hierfly <- function(data, h=NULL, metric="euclidean", method="ward.D2", scale=TRUE) {
+  if (tibble::is.tibble(data)) data <- as.data.frame(data)
 	if (scale) data <- rescaler(data)
 	id <- 1:nrow(data)
 	cat_var <- sapply(data, is.factor)

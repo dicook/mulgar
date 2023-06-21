@@ -47,6 +47,6 @@ if (interactive()) {
   animate_xy(cl_hfly$data[,1:5], edges=cl_hfly$edges,
     col=pcol, pch=pch, edges.col=ecol,
     axes="bottomleft")
-  }
+}
 }
 \keyword{cluster}
