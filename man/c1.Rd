@@ -9,11 +9,6 @@
 \alias{c5}
 \alias{c6}
 \alias{c7}
-\alias{c8}
-\alias{c9}
-\alias{c10}
-\alias{c11}
-\alias{c12}
 \title{Challenge data sets}
 \format{
 A datasets with differing number of rows and columns
