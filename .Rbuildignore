@@ -7,3 +7,4 @@
 data-raw
 inst/hexsticker
 ^cran-comments\.md$
+^CRAN-SUBMISSION$
