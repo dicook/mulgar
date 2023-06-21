@@ -5,3 +5,5 @@
 ^docs$
 ^pkgdown$
 data-raw
+inst/hexsticker
+^cran-comments\.md$

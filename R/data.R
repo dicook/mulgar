@@ -72,7 +72,7 @@ NULL
 #' \item{mint, amint7-amint720}{min temperature, on that day, and over last 7, ..., 720 days}
 #' \item{ws, aws_m0-aws_m24}{average wind speed, on that day, and for last 1-24 months}
 #' \item{dist_road, log_dist_road}{distance to nearest road}
-#' \item{dist_cfa, log_dist_cfa}{distance to neaest county fire authority facility}
+#' \item{dist_cfa, log_dist_cfa}{distance to nearest county fire authority facility}
 #' \item{dist_camp, log_dist_camp}{distance to nearest camp site}
 #' \item{cause}{predicted ignition cause, accident, arson, burning_off, lightning}
 #' }

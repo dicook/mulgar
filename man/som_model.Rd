@@ -43,7 +43,7 @@ data(clusters)
 c_grid <- kohonen::somgrid(xdim = 5, ydim = 5,
   topo = 'rectangular')
 c_som <- kohonen::som(as.matrix(clusters[,1:5]), grid = c_grid)
-c_data_net <- f_som(c_som)
+c_data_net <- som_model(c_som)
 require(ggplot2)
 ggplot() +
   geom_segment(data=c_data_net$edges_s,
