@@ -4,6 +4,7 @@
 #' a tibble with numbered projections
 #'
 #' @param t1 tour projection sequence
+#' @return tbl1 tibble
 #' @export
 #' @examples
 #'

@@ -9,6 +9,9 @@ norm_vec(x)
 \arguments{
 \item{x}{numeric vector}
 }
+\value{
+numeric vector
+}
 \description{
 Returns the normalised vector, where the sum of
 squares is equal to 1

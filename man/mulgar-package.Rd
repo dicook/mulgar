@@ -8,7 +8,7 @@
 \description{
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-This is a companion to the book 'Interactively exploring high-dimensional data and models in R' \url{https://dicook.github.io/mulgar_book/} by Cook and Laa. It contains useful functions for processing data in preparation for visualising with a tour. There are also several sample data sets.
+This is a companion to the book Cook, D. and Laa, U. (2023) \url{https://dicook.github.io/mulgar_book/} "Interactively exploring high-dimensional data and models in R". by Cook and Laa. It contains useful functions for processing data in preparation for visualising with a tour. There are also several sample data sets.
 }
 \seealso{
 Useful links:

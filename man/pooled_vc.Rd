@@ -7,11 +7,14 @@
 pooled_vc(x, cl, prior = rep(1/length(unique(cl)), length(unique(cl))))
 }
 \arguments{
-\item{x}{multivariate data set.}
+\item{x}{multivariate data set, matrix.}
 
 \item{cl}{class variable}
 
 \item{prior}{prior probability for each class, must sum to 1, default all equal}
+}
+\value{
+matrix
 }
 \description{
 This function computes the group variance-covariance

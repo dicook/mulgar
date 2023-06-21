@@ -4,11 +4,12 @@
 #' squares is equal to 1
 #'
 #' @param x numeric vector
+#' @return numeric vector
 #' @export
 #' @examples
 #' x <- rnorm(5)
 #' norm_vec(x)
-norm_vec<-function(x) {
+norm_vec <- function(x) {
 	x <- x/calc_norm(x)
 	x
 }
@@ -19,12 +20,14 @@ norm_vec<-function(x) {
 #' of a vector
 #'
 #' @param x numeric vector
-#' @export
+#' @return numeric value
 #' @export
 #' @examples
 #' x <- rnorm(5)
 #' calc_norm(x)
-calc_norm <- function(x) { sqrt(sum(x^2)) }
+calc_norm <- function(x) {
+	sqrt(sum(x^2))
+}
 
 #' Generate a sample from a multivariate normal
 #'
@@ -181,9 +184,10 @@ gen_xvar_ellipse <- function(x, n=100, nstd=1){
 #' matrices, and produces a weighted average. It is useful
 #' for examining the linear discriminant analysis model.
 #'
-#' @param x multivariate data set.
+#' @param x multivariate data set, matrix.
 #' @param cl class variable
 #' @param prior prior probability for each class, must sum to 1, default all equal
+#' @return matrix
 #' @export
 #' @examples
 #' data(clusters)

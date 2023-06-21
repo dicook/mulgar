@@ -9,6 +9,9 @@ convert_proj_tibble(t1)
 \arguments{
 \item{t1}{tour projection sequence}
 }
+\value{
+tbl1 tibble
+}
 \description{
 Take an array of a projection sequence, and turn into
 a tibble with numbered projections

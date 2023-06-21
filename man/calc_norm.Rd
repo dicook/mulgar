@@ -9,6 +9,9 @@ calc_norm(x)
 \arguments{
 \item{x}{numeric vector}
 }
+\value{
+numeric value
+}
 \description{
 Returns the square root of the sum of squares
 of a vector
