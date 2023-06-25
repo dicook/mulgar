@@ -37,7 +37,7 @@
 #'     axes="bottomleft")
 #' }
 hierfly <- function(data, h=NULL, metric="euclidean", method="ward.D2", scale=TRUE) {
-  if (tibble::is.tibble(data)) data <- as.data.frame(data)
+  if (tibble::is_tibble(data)) data <- as.data.frame(data)
 	if (scale) data <- rescaler(data)
 	id <- 1:nrow(data)
 	cat_var <- sapply(data, is.factor)

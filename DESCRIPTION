@@ -1,6 +1,6 @@
 Package: mulgar
 Title: Functions for Pre-Processing Data for Multivariate Data Visualisation using Tours
-Version: 1.0.1
+Version: 1.0.1.9000
 Authors@R: c(
     person("Dianne", "Cook",
            role = c("aut", "cre"),
@@ -8,7 +8,7 @@ Authors@R: c(
            comment = c(ORCID = "0000-0002-3813-7155")),
     person("Ursula", "Laa", 
            email = "ursula.laa@boku.ac.at", 
-           role = "ctb", 
+           role = "aut", 
            comment = c(ORCID = "0000-0002-0249-6439")))
 Description: This is a companion to the book Cook, D. and Laa, U. (2023) <https://dicook.github.io/mulgar_book/>
   "Interactively exploring high-dimensional data and models in R".  
