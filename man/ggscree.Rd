@@ -4,10 +4,12 @@
 \alias{ggscree}
 \title{This function produces a simple scree plot}
 \usage{
-ggscree(pc, guide = TRUE, cumulative = FALSE)
+ggscree(pc, q = 2, guide = TRUE, cumulative = FALSE)
 }
 \arguments{
 \item{pc}{PCA object}
+
+\item{q}{number of principal components to show, default 2 (you should change)}
 
 \item{guide}{logical whether to compute and add
 a typical value of the variance, if the data was full-dimensional}
@@ -30,5 +32,5 @@ aflw_std <- apply(aflw[,7:35], 2, function(x)
 							       sd(x, na.rm=TRUE))
 aflw_pca <- prcomp(aflw_std[,c("goals","behinds",
                                "kicks","disposals")])
-ggscree(aflw_pca)
+ggscree(aflw_pca, q=3)
 }

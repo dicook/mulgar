@@ -6,6 +6,7 @@
 #' all of the variables have been standardised prior to PCA.
 #'
 #' @param pc PCA object
+#' @param q number of principal components to show, default 2 (you should change)
 #' @param guide logical whether to compute and add
 #'    a typical value of the variance, if the data was full-dimensional
 #' @param cumulative logical whether to draw cumulative variance
@@ -20,8 +21,8 @@
 #' 							       sd(x, na.rm=TRUE))
 #' aflw_pca <- prcomp(aflw_std[,c("goals","behinds",
 #'                                "kicks","disposals")])
-#' ggscree(aflw_pca)
-ggscree <- function(pc, guide=TRUE, cumulative=FALSE) {
+#' ggscree(aflw_pca, q=3)
+ggscree <- function(pc, q=2, guide=TRUE, cumulative=FALSE) {
   # Check input
 	try (if(!is(pc, "prcomp")) stop("You need to provide a prcomp object."))
 
@@ -52,7 +53,7 @@ ggscree <- function(pc, guide=TRUE, cumulative=FALSE) {
   maxy <- 0
   if (guide) {
   	scree <- ggplot2::ggplot() +
-  		ggplot2::geom_line(data=sdev_guide, ggplot2::aes(x=n, y=median),
+  		ggplot2::geom_line(data=sdev_guide[1:q,], ggplot2::aes(x=n, y=median),
   											 colour="grey", size=2)
   	  #ggplot2::geom_line(data=sdev_guide, ggplot2::aes(x=n, y=upper),
   	  #									 colour="grey", size=2)
@@ -61,8 +62,8 @@ ggscree <- function(pc, guide=TRUE, cumulative=FALSE) {
   	scree <- ggplot2::ggplot()
   }
   scree <- scree +
-  	ggplot2::geom_line(data=sc_data, ggplot2::aes(x=n, y=v)) +
-  	ggplot2::geom_point(data=sc_data, ggplot2::aes(x=n, y=v)) +
+  	ggplot2::geom_line(data=sc_data[1:q,], ggplot2::aes(x=n, y=v)) +
+  	ggplot2::geom_point(data=sc_data[1:q,], ggplot2::aes(x=n, y=v)) +
   	ggplot2::xlab("") + ggplot2::ylab("Variance") +
   	ggplot2::ylim(0, max(sc_data$v, maxy))
 
