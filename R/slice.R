@@ -50,12 +50,12 @@ ggslice_projection <- function(data, h, proj, center=NULL,
 	data_proj <- as.matrix(data) %*% proj
 	colnames(data_proj) <- c("P1", "P2")
 	data_proj <- tibble::as.tibble(data_proj)
-	ggplot2::ggplot(data_proj[d >= h,], aes(P1, P2)) +
-		geom_point(aes(color = col[d >= h]), pch = 46, alpha = 0.5) +
-		geom_point(data = data_proj[d < h,],
-							 mapping = aes(color = col[d < h])) +
-		theme_bw() +
-		coord_fixed()
+	ggplot2::ggplot(data_proj[d >= h,], ggplot2::aes(x=P1, y=P2)) +
+		ggplot2::geom_point(ggplot2::aes(color = col[d >= h]), pch = 46, alpha = 0.5) +
+		ggplot2::geom_point(data = data_proj[d < h,],
+							 mapping = ggplot2::aes(color = col[d < h])) +
+		ggplot2::theme_bw() +
+		ggplot2::coord_fixed()
 }
 
 #' Generate basis vector
