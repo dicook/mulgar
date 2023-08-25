@@ -23,9 +23,8 @@ for plotting.
 \examples{
 require(mclust)
 data(clusters)
-clusters_BIC <- mclustBIC(clusters[,1:5])
+clusters_BIC <- mclustBIC(clusters[,1:5], G=2:6)
 ggmcbic(clusters_BIC)
-ggmcbic(clusters_BIC, cl=3:9)
 ggmcbic(clusters_BIC, top=4)
 
 data(simple_clusters)
