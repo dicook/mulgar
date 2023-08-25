@@ -1,10 +1,9 @@
 ## Overview
 
-* This is a new release.
-* Changes made at request of manual check by Beni Altmann: reduced size by removing some sample data sets, fixed return value for four functions
+* This is a minor update, with a small number of additional functions. 
 
-## ── R CMD check results ────────────────────────── mulgar 1.0.0 ────
-Duration: 18.2s
+── R CMD check results ──────────────────── mulgar 1.0.2 ────
+Duration: 17.9s
 
 0 errors ✔ | 0 warnings ✔ | 0 notes ✔
 
