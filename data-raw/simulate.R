@@ -86,16 +86,12 @@ save(plane_nonlin, file="data/plane_nonlin.rda")
 
 # Simulate clustered data, 5D, three clusters
 clusters <- matrix(rnorm(100*3*5), ncol=5)
-#clusters[1:100, 1] <- clusters[1:100, 1] - 3
 clusters[1:100, 2] <- clusters[1:100, 2] - 4
-#clusters[1:100, 3] <- clusters[1:100, 3] - 2
 clusters[1:100, 4] <- clusters[1:100, 4] - 5
 clusters[101:200, 3] <- clusters[101:200, 3] + 2
 clusters[101:200, 4] <- clusters[101:200, 4] - 4
 clusters[201:300, 5] <- clusters[201:300, 5] - 2
-#clusters[201:300, 1] <- clusters[201:300, 1] + 2
 clusters[201:300, 2] <- clusters[201:300, 2] + 5
-#clusters[201:300, 5] <- clusters[201:300, 5] + 2
 clusters <- apply(clusters, 2, function(x) (x-mean(x))/sd(x))
 clusters <- as.data.frame(clusters)
 colnames(clusters) <- paste0("x",1:5)
