@@ -167,3 +167,72 @@ ggplot(as.data.frame(df_tsne$Y), aes(x=V1, y=V2)) +
 
 clusters_nonlin <- df
 save(clusters_nonlin, file="data/clusters_nonlin")
+
+# Hiding anomalies
+set.seed(946)
+d <- tibble(x1=runif(200, -1, 1),
+						x2=runif(200, -1, 1),
+						x3=runif(200, -1, 1))
+d <- d %>%
+	mutate(x4 = x3 + runif(200, -0.1, 0.1))
+d <- bind_rows(d, c(x1=0, x2=0, x3=-0.5, x4=0.5))
+
+d_r <- d %>%
+	mutate(x1 = cos(pi/6)*x1 + sin(pi/6)*x3,
+				 x3 = -sin(pi/6)*x1 + cos(pi/6)*x3,
+				 x2 = cos(pi/6)*x2 + sin(pi/6)*x4,
+				 x4 = -sin(pi/6)*x2 + cos(pi/6)*x4)
+
+# Check data
+library(GGally)
+ggscatmat(d)
+ggscatmat(d_r)
+animate_xy(d)
+animate_xy(d_r)
+
+# Save
+anomaly1 <- d
+anomaly2 <- d_r
+save(anomaly1, file="data/anomaly1.rda")
+save(anomaly2, file="data/anomaly2.rda")
+
+# 4D sphere with point in middle
+library(geozoo)
+
+set.seed(626)
+d <- sphere.hollow(p = 4, n = 96)$points |>
+	as_tibble() |>
+	rename(x1 = V1, x2 = V2, x3 = V3, x4 = V4)
+d <- d |>
+	bind_rows(c(x1 = 0, x2 = 0, x3 = 0, x4 = 0))
+animate_xy(d, axes="off")
+
+# Save
+anomaly3 <- d[sample(1:97),]
+save(anomaly3, file="data/anomaly3.rda")
+
+# 2D parabola with point
+set.seed(946)
+d <- tibble(x1=runif(200, -1, 1),
+						x2=runif(200, -1, 1),
+						x3=runif(200, -1, 1))
+d <- d %>%
+	mutate(x4 = (x3^2-0.5)*2 + runif(200, -0.1, 0.1))
+d <- bind_rows(d, c(x1=0, x2=0, x3=0, x4=0.7))
+
+d_r <- d %>%
+	mutate(x1 = cos(pi/6)*x1 + sin(pi/6)*x3,
+				 x3 = -sin(pi/6)*x1 + cos(pi/6)*x3,
+				 x2 = cos(pi/6)*x2 + sin(pi/6)*x4,
+				 x4 = -sin(pi/6)*x2 + cos(pi/6)*x4)
+ggscatmat(d)
+ggscatmat(d_r)
+animate_xy(d_r, axes="off")
+
+anomaly4 <- d[sample(1:nrow(d)),]
+anomaly5 <- d_r[sample(1:nrow(d_r)),]
+save(anomaly4, file="data/anomaly4.rda")
+save(anomaly5, file="data/anomaly5.rda")
+
+
+# Simulating different association

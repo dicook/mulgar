@@ -1,6 +1,6 @@
 Package: mulgar
 Title: Functions for Pre-Processing Data for Multivariate Data Visualisation using Tours
-Version: 1.0.2
+Version: 1.0.3
 Authors@R: c(
     person("Dianne", "Cook",
            role = c("aut", "cre"),
@@ -36,6 +36,6 @@ Encoding: UTF-8
 LazyData: true
 LazyDataCompression: bzip2
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.2
 URL: https://dicook.github.io/mulgar/, https://github.com/dicook/mulgar
 BugReports: https://github.com/dicook/mulgar/issues

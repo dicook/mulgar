@@ -333,3 +333,22 @@ NULL
 #' ggplot(c1, aes(x=x1, y=x2)) +
 #'   geom_point() + theme(aspect.ratio=1)
 NULL
+
+#' Data sets with anomalies
+#'
+#' Simulated data with anomalies
+#'
+#' \describe{
+#' \item{x1, x2, x3, x4}{numeric variables}
+#' }
+#'
+#' @name anomaly1
+#' @aliases anomaly2, anomaly3, anomaly4, anomaly5
+#' @docType data
+#' @format A datasets with anomalies
+#' @keywords datasets
+#' @examples
+#' require(GGally)
+#' ggscatmat(anomaly1)
+#' ggscatmat(anomaly2)
+NULL
