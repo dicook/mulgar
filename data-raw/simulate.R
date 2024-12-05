@@ -234,5 +234,51 @@ anomaly5 <- d_r[sample(1:nrow(d_r)),]
 save(anomaly4, file="data/anomaly4.rda")
 save(anomaly5, file="data/anomaly5.rda")
 
-
 # Simulating different association
+set.seed(946)
+n <- 136
+d <- tibble(x1=runif(n, -1, 1)) |>
+	mutate(x2 = 2*x1 + x1^2 + runif(n, -0.1, 0.1),
+				 x3 = x1^3 + runif(n, -0.1, 0.1),
+				 x4 = 3*x1 - x1^2 + runif(n, -0.1, 0.1)) |>
+  mutate(x2 = (x2 - min(x2))/(max(x2) - min(x2)),
+  			 x3 = (x3 - min(x3))/(max(x3) - min(x3)),
+  			 x4 = (x4 - min(x4))/(max(x4) - min(x4)))
+
+ggscatmat(d)
+assoc1 <- d
+save(assoc1, file="data/assoc1.rda")
+
+set.seed(741)
+n <- 322
+d <- tibble(x1=runif(n, -1, 1),
+						x2=runif(n, -1, 1),
+						x3=runif(n, -1, 1))
+d <- d %>%
+	mutate(x4 = (x3^2-0.5)*2 + runif(n, -0.1, 0.1))
+
+d_r <- d %>%
+	mutate(x1 = cos(pi/6)*x1 + sin(pi/6)*x3,
+				 x3 = -sin(pi/6)*x1 + cos(pi/6)*x3,
+				 x2 = cos(pi/6)*x2 + sin(pi/6)*x4,
+				 x4 = -sin(pi/6)*x2 + cos(pi/6)*x4)
+
+assoc2 <- d_r
+save(assoc2, file="data/assoc2.rda")
+
+set.seed(746)
+n <- 576
+d <- cube.solid.random(p = 4, n = n)$points
+d <- as_tibble(d) |>
+	rename(x1 = Var1, x2 = Var2, x3 = Var3, x4 = Var4) |>
+	filter(2*x1 + x2 < 1.3) |>
+	filter(!between(3*x3 - x4, 0.5, 1.2))
+
+d_r <- d %>%
+	mutate(x1 = cos(pi/6)*x1 + sin(pi/6)*x3,
+				 x3 = -sin(pi/6)*x1 + cos(pi/6)*x3,
+				 x2 = cos(pi/6)*x2 + sin(pi/6)*x4,
+				 x4 = -sin(pi/6)*x2 + cos(pi/6)*x4)
+
+assoc3 <- d_r
+save(assoc3, file="data/assoc3.rda")

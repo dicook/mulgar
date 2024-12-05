@@ -352,3 +352,21 @@ NULL
 #' ggscatmat(anomaly1)
 #' ggscatmat(anomaly2)
 NULL
+
+#' Data sets with different types of association
+#'
+#' Simulated data with various associations
+#'
+#' \describe{
+#' \item{x1, x2, x3, x4}{numeric variables}
+#' }
+#'
+#' @name assoc1
+#' @aliases assoc2, assoc3
+#' @docType data
+#' @format A datasets with various association
+#' @keywords datasets
+#' @examples
+#' require(GGally)
+#' ggscatmat(assoc1)
+NULL
