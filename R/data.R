@@ -315,24 +315,53 @@ NULL
 #'   theme(aspect.ratio=1)
 NULL
 
-#' Challenge data sets
+#' Cluster challenge data sets
 #'
-#' Simulated data with different structure
+#' Simulated data with different structures
 #'
 #' \describe{
 #' \item{x1, x2, ... }{numeric variables}
 #' }
 #'
-#' @name c1
-#' @aliases c2 c3 c4 c5 c6 c7
+#' @name clusterchallenges
 #' @docType data
 #' @format A datasets with differing number of rows and columns
 #' @keywords datasets
+#' @source Created by Di Cook.
 #' @examples
 #' require(ggplot2)
+#' data(c1)
 #' ggplot(c1, aes(x=x1, y=x2)) +
 #'   geom_point() + theme(aspect.ratio=1)
 NULL
+
+#' @rdname clusterchallenges
+#' @format NULL
+"c1"
+
+#' @rdname clusterchallenges
+#' @format NULL
+"c2"
+
+#' @rdname clusterchallenges
+#' @format NULL
+"c3"
+
+#' @rdname clusterchallenges
+#' @format NULL
+"c4"
+
+#' @rdname clusterchallenges
+#' @format NULL
+"c5"
+
+#' @rdname clusterchallenges
+#' @format NULL
+"c6"
+
+#' @rdname clusterchallenges
+#' @format NULL
+"c7"
 
 #' Data sets with anomalies
 #'
@@ -342,16 +371,38 @@ NULL
 #' \item{x1, x2, x3, x4}{numeric variables}
 #' }
 #'
-#' @name anomaly1
-#' @aliases anomaly2, anomaly3, anomaly4, anomaly5
+#' @name anomalies
 #' @docType data
 #' @format A datasets with anomalies
 #' @keywords datasets
+#' @source Created by Di Cook.
 #' @examples
 #' require(GGally)
+#' data(anomaly1)
+#' data(anomaly2)
 #' ggscatmat(anomaly1)
 #' ggscatmat(anomaly2)
 NULL
+
+#' @rdname anomalies
+#' @format NULL
+"anomaly1"
+
+#' @rdname anomalies
+#' @format NULL
+"anomaly2"
+
+#' @rdname anomalies
+#' @format NULL
+"anomaly3"
+
+#' @rdname anomalies
+#' @format NULL
+"anomaly4"
+
+#' @rdname anomalies
+#' @format NULL
+"anomaly5"
 
 #' Data sets with different types of association
 #'
@@ -361,8 +412,7 @@ NULL
 #' \item{x1, x2, x3, x4}{numeric variables}
 #' }
 #'
-#' @name assoc1
-#' @aliases assoc2, assoc3
+#' @name associations
 #' @docType data
 #' @format A datasets with various association
 #' @keywords datasets
@@ -370,3 +420,15 @@ NULL
 #' require(GGally)
 #' ggscatmat(assoc1)
 NULL
+
+#' @rdname associations
+#' @format NULL
+"assoc1"
+
+#' @rdname associations
+#' @format NULL
+"assoc2"
+
+#' @rdname associations
+#' @format NULL
+"assoc3"

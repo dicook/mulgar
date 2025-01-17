@@ -25,6 +25,12 @@
     <loc>/reference/aflw.html</loc>
   </url>
   <url>
+    <loc>/reference/anomalies.html</loc>
+  </url>
+  <url>
+    <loc>/reference/associations.html</loc>
+  </url>
+  <url>
     <loc>/reference/box.html</loc>
   </url>
   <url>
@@ -38,6 +44,9 @@
   </url>
   <url>
     <loc>/reference/calc_norm.html</loc>
+  </url>
+  <url>
+    <loc>/reference/clusterchallenges.html</loc>
   </url>
   <url>
     <loc>/reference/clusters.html</loc>

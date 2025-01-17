@@ -1,6 +1,6 @@
 Package: mulgar
 Title: Functions for Pre-Processing Data for Multivariate Data Visualisation using Tours
-Version: 1.0.3
+Version: 1.0.4
 Authors@R: c(
     person("Dianne", "Cook",
            role = c("aut", "cre"),
