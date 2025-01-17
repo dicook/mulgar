@@ -27,6 +27,7 @@ Simulated data with various associations
 }
 \examples{
 require(GGally)
+data(assoc1)
 ggscatmat(assoc1)
 }
 \keyword{datasets}

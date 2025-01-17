@@ -418,6 +418,7 @@ NULL
 #' @keywords datasets
 #' @examples
 #' require(GGally)
+#' data(assoc1)
 #' ggscatmat(assoc1)
 NULL
 
