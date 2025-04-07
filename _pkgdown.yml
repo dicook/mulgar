@@ -1,0 +1,69 @@
+url: ~
+template:
+  bootstrap: 5
+  bootswatch: united
+  bslib:
+    pkgdown-nav-height: 100px
+
+navbar:
+  structure:
+    left:  [intro, reference, articles, tutorials, news]
+    right: [search, github]
+
+reference:
+- title: "Data"
+  desc: "Sample data sets for examples."
+  contents:
+  - aflw
+  - anomaly1
+  - anomaly2
+  - anomaly3
+  - anomaly4
+  - anomaly5
+  - assoc1
+  - assoc2
+  - assoc3
+  - box
+  - bushfires
+  - c1
+  - c2
+  - c3
+  - c4
+  - c5
+  - c6
+  - c7
+  - copula
+  - clusters_nonlin
+  - clusters
+  - multicluster
+  - pisa
+  - plane_nonlin
+  - plane
+  - simple_clusters
+  - sketches_test
+  - sketches_train
+- title: "Utility"
+  desc: "Useful functions"
+  contents:
+  - calc_mv_dist
+  - calc_norm
+  - convert_proj_tibble
+  - gen_vc_ellipse
+  - gen_xvar_ellipse
+  - norm_vec
+  - pooled_vc
+  - rmvn
+  - ggslice
+  - ggslice_projection
+- title: "Principal Component Analysis"
+  desc: "Useful functions for PCA"
+  contents:
+  - ggscree
+  - pca_model
+- title: "Clustering"
+  desc: "Useful functions for cluster analysis"
+  contents:
+  - ggmcbic
+  - hierfly
+  - mc_ellipse
+  - som_model
