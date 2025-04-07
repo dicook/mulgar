@@ -11,6 +11,7 @@
 ^\.gitignore$
 ^\.Rhistory$
 ^\.git$
+^\.github$
 ^\.\.Rcheck$
 ^README\.md$
 ^man/figures/mulga*.jpg

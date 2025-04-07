@@ -9,19 +9,5 @@ Duration: 20.6s
 
 ## Test environment
 
-* local R installation: R version 4.3.1 (2023-06-16)
-* Windows Server 2022, R-devel, 64 bit
-* Fedora Linux, R-devel, clang, gfortran
-* Ubuntu Linux 20.04.1 LTS, R-release, GCC
-
-using `check_rhub()`, returns some notes:
-
-❯ checking for non-standard things in the check directory ... NOTE
-  Found the following files/directories:
-    ''NULL''
-
-❯ checking for detritus in the temp directory ... NOTE
-  Found the following files/directories:
-    'lastMiKTeXException'
-    
-which I understand can be ignored.    
+* local R installation: R version 4.4.2 (2024-10-31) -- "Pile of Leaves"
+* other platforms checked using `check_rhub()`: linux, m1-san, macos, macos-arm64, windows
