@@ -15,7 +15,7 @@ Description: This is a companion to the book Cook, D. and Laa, U. (2023) <https:
   by Cook and Laa. It contains useful functions for processing data in preparation for 
   visualising with a tour. There are also several sample data sets.
 Depends:
-    R (>= 4.0)
+    R (>= 4.1.0)
 Imports:
     geozoo,
     tibble,
@@ -30,7 +30,8 @@ Suggests:
     ggdendro,
     colorspace,
     mclust,
-    kohonen
+    kohonen,
+    GGally
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

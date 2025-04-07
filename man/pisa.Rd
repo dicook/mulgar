@@ -5,12 +5,12 @@
 \alias{pisa}
 \title{PISA scores}
 \format{
-A data set with 26371 rows and 31 columns
+A data set with 10548 rows and 31 columns
 }
 \description{
 This is data from the 2018 testing, available from
 https://webfs.oecd.org/pisa2018/SPSS_STU_QQQ.zip.
-A subset of the data containing only
+A subset of the data containing samples from
 Australia and Indonesia, and the simulated
 scores for math, reading and science.
 }
@@ -24,6 +24,6 @@ scores for math, reading and science.
 
 require(dplyr)
 data(pisa)
-pisa \%>\% count(CNT)
+pisa |> count(CNT)
 }
 \keyword{datasets}

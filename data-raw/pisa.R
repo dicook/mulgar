@@ -9,6 +9,10 @@ pisa <- stu_qqq %>%
 	select(CNT, PV1MATH:PV10SCIE) %>%
 	filter(CNT %in% c("AUS", "IDN"))
 
+# Reduce size
+set.seed(1252)
+pisa <- pisa |> group_by(CNT) |> sample_frac(0.4)
+
 # Keep country, and scores
 save(pisa,
 		 file=here::here("data", "pisa.rda"))

@@ -2,8 +2,8 @@
 
 * This is a minor update, with a small number of additional functions. 
 
-── R CMD check results ──────────────────── mulgar 1.0.2 ────
-Duration: 17.9s
+── R CMD check results ──────────────────── mulgar 1.0.4 ────
+Duration: 20.6s
 
 0 errors ✔ | 0 warnings ✔ | 0 notes ✔
 

@@ -2,7 +2,7 @@
 #'
 #' This is data from the 2018 testing, available from
 #' https://webfs.oecd.org/pisa2018/SPSS_STU_QQQ.zip.
-#' A subset of the data containing only
+#' A subset of the data containing samples from
 #' Australia and Indonesia, and the simulated
 #' scores for math, reading and science.
 #'
@@ -13,13 +13,13 @@
 #'
 #' @name pisa
 #' @docType data
-#' @format A data set with 26371 rows and 31 columns
+#' @format A data set with 10548 rows and 31 columns
 #' @keywords datasets
 #' @examples
 #'
 #' require(dplyr)
 #' data(pisa)
-#' pisa %>% count(CNT)
+#' pisa |> count(CNT)
 NULL
 
 #' AFLW player statistics
@@ -433,3 +433,38 @@ NULL
 #' @rdname associations
 #' @format NULL
 "assoc3"
+
+#' Data sets generated using copulas
+#'
+#' Simulated data from covsim, using different copula models
+#'
+#' \describe{
+#' \item{x1, x2, x3, x4, x5}{numeric variables}
+#' }
+#'
+#' @name copula
+#' @docType data
+#' @format A datasets with various association
+#' @keywords datasets
+#' @examples
+#' require(GGally)
+#' data(copclayton)
+#' ggscatmat(copclayton)
+NULL
+
+#' @rdname copula
+#' @format NULL
+"copclayton"
+
+#' @rdname copula
+#' @format NULL
+"copjoe"
+
+#' @rdname copula
+#' @format NULL
+"copfrank"
+
+#' @rdname copula
+#' @format NULL
+"copnorm"
+

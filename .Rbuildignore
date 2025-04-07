@@ -13,3 +13,4 @@
 ^\.git$
 ^\.\.Rcheck$
 ^README\.md$
+^man/figures/mulga*.jpg
