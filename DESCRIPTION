@@ -1,6 +1,6 @@
 Package: mulgar
 Title: Functions for Pre-Processing Data for Multivariate Data Visualisation using Tours
-Version: 1.0.5
+Version: 1.0.6
 Authors@R: c(
     person("Dianne", "Cook",
            role = c("aut", "cre"),
@@ -23,6 +23,7 @@ Imports:
     tidyr,
     dplyr,
     purrr,
+    cxhull,
     stats,
     methods
 Suggests:

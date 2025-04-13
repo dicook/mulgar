@@ -18,5 +18,3 @@ library(mulgar)
 
 The [mulga](https://en.wikipedia.org/wiki/Mulga_(habitat)) is an iconic landscape in Australia. It is a woodland dominated by the mulga tree (Acacia aneura). As you travel through mulga the trees look very regular, sometimes like a stand of lollipops, which is apparently due to close neighbours being clones! The wood is especially hardy, durable and resistant to pests. The climate is semi-arid and it can be found across Australia, Queensland, New South Wales, South Australia and Western Australia. This landscape is host to numerous species: red kangaroos, spinifex hopping mice, mulga parrots, dunnarts, thorny devils, bearded dragons, and pests like feral goats.
 
-![photo](https://github.com/dicook/mulgar/blob/main/inst/figures/mulga4.jpg)
-![photo](https://github.com/dicook/mulgar/blob/main/inst/figures/mulga2.jpg)
