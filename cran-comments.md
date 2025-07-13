@@ -1,8 +1,8 @@
 ## Overview
 
-* This adds an additional function to create convex hulls to summarise clusters
+* This is a minor update, with a small number of additional functions. 
 
-── R CMD check results ──────────────────── mulgar 1.0.6 ────
+── R CMD check results ──────────────────── mulgar 1.0.5 ────
 Duration: 21.6s
 
 0 errors ✔ | 0 warnings ✔ | 0 notes ✔
