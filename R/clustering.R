@@ -248,7 +248,7 @@ gen_chull <- function(data, cl) {
   n <- nrow(data)
 	p <- ncol(data)
 	try (if(p < 2) stop("Number of variables needs to be at least 2."))
-	if (is.factor(cl)) cl = as.numeric(cl)
+	#if (!is.factor(cl)) cl = factor(cl)
 
 	# Check for duplicates
 	# Calculation of convex hull cannot have duplicates
