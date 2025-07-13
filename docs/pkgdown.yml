@@ -1,9 +1,8 @@
 pandoc: '3.4'
-pkgdown: 2.0.9
+pkgdown: 2.1.1
 pkgdown_sha: ~
 articles: {}
-last_built: 2025-04-07T04:14Z
+last_built: 2025-07-13T23:52Z
 urls:
   reference: https://dicook.github.io/mulgar/reference
   article: https://dicook.github.io/mulgar/articles
-
