@@ -253,9 +253,10 @@ gen_chull <- function(data, cl) {
 	# Check for duplicates
 	# Calculation of convex hull cannot have duplicates
 	dup <- duplicated(data)
+	cl <- cl[!dup]
 	cl_data <- data |>
-		mutate(cl = cl) |>
 		filter(!dup) |>
+		mutate(cl = cl) |>
 		arrange(cl)
 
 # Arranging by cluster id is important to define edges
