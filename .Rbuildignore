@@ -15,3 +15,5 @@
 ^\.\.Rcheck$
 ^README\.md$
 ^man/figures/mulga*.jpg
+^\.positai$
+^\.claude$

@@ -1,3 +1,7 @@
+# mulgar 1.0.6
+
+* Fixes for ggplot2 changes
+
 # mulgar 1.0.5
 
 * More simulated data from copulas

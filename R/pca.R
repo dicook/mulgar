@@ -54,9 +54,7 @@ ggscree <- function(pc, q=2, guide=TRUE, cumulative=FALSE) {
   if (guide) {
   	scree <- ggplot2::ggplot() +
   		ggplot2::geom_line(data=sdev_guide[1:q,], ggplot2::aes(x=n, y=median),
-  											 colour="grey", size=2)
-  	  #ggplot2::geom_line(data=sdev_guide, ggplot2::aes(x=n, y=upper),
-  	  #									 colour="grey", size=2)
+  											 colour="grey", linewidth=2)
   	maxy <- max(sdev_guide$median)
   } else {
   	scree <- ggplot2::ggplot()
