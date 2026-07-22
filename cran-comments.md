@@ -1,9 +1,9 @@
 ## Overview
 
-* This is a minor update, with a small number of additional functions. 
+* This is a minor update, with a new data set added. 
 
-── R CMD check results ──────────────────── mulgar 1.0.5 ────
-Duration: 21.6s
+── R CMD check results ────────────────────────── mulgar 1.0.7 ────
+Duration: 20.7s
 
 0 errors ✔ | 0 warnings ✔ | 0 notes ✔
 
