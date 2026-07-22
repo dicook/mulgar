@@ -35,6 +35,7 @@ reference:
   - copula
   - clusters_nonlin
   - clusters
+  - fake_trees
   - multicluster
   - pisa
   - plane_nonlin
