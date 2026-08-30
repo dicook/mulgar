@@ -25,7 +25,6 @@ tbl1 tibble
 
 require(tourr)
 #> Loading required package: tourr
-#> Warning: package ‘tourr’ was built under R version 4.6.1
 #> 
 #> Attaching package: ‘tourr’
 #> The following object is masked from ‘package:GGally’:

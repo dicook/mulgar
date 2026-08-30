@@ -1,3 +1,7 @@
+# mulgar 1.0.8
+
+* To satisfy CRAN's stale timestamp note
+
 # mulgar 1.0.7
 
 * fake_trees data from liminal added here. The main reason being that liminal was removed from CRAN, so we can't depend on it for the data in the book.

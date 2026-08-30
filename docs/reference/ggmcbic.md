@@ -31,7 +31,6 @@ mc_bic a ggplot object
 ``` r
 require(mclust)
 #> Loading required package: mclust
-#> Warning: package ‘mclust’ was built under R version 4.6.1
 #> Package 'mclust' version 6.1.3
 #> Type 'citation("mclust")' for citing this R package in publications.
 #> 

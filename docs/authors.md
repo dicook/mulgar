@@ -13,13 +13,13 @@ Source:
 [`DESCRIPTION`](https://github.com/dicook/mulgar/blob/HEAD/DESCRIPTION)
 
 Cook D, Laa U (2026). *mulgar: Functions for Pre-Processing Data for
-Multivariate Data Visualisation using Tours*. R package version 1.0.7,
+Multivariate Data Visualisation using Tours*. R package version 1.0.8,
 <https://dicook.github.io/mulgar/>.
 
     @Manual{,
       title = {mulgar: Functions for Pre-Processing Data for Multivariate Data Visualisation using Tours},
       author = {Dianne Cook and Ursula Laa},
       year = {2026},
-      note = {R package version 1.0.7},
+      note = {R package version 1.0.8},
       url = {https://dicook.github.io/mulgar/},
     }
