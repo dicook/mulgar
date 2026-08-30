@@ -10,4 +10,4 @@ Duration: 20.7s
 ## Test environment
 
 * local R installation: R version 4.6.1
-* other platforms checked using `check_rhub()`: linux, m1-san, windows, with details at https://github.com/dicook/mulgar/actions/runs/29892402373
+* other platforms checked using `check_rhub()`: linux, m1-san, windows, with details at https://github.com/dicook/mulgar/actions/runs/33337072665
